@@ -17,27 +17,27 @@
          src="../assets/Яндекс_Дом@1x.png"
          alt="Яндекс Дом">
     <ul class="header__header-menu">
-      <li class="header-menu__menu-item header-menu__menu-item_active_true"><div>Сводка</div></li>
-      <li class="header-menu__menu-item header-menu__menu-item_active_false"><div>Устройства</div></li>
-      <li class="header-menu__menu-item header-menu__menu-item_active_false"><div>Сценарии</div></li>
+      <li class="header-menu__menu-item header-menu__menu-item_active_true">Сводка</li>
+      <li class="header-menu__menu-item header-menu__menu-item_active_false">Устройства</li>
+      <li class="header-menu__menu-item header-menu__menu-item_active_false">Сценарии</li>
     </ul>
   </header>
 
   <main class="main">
-    <section>
+    <section id="main">
       <div>Главное</div>
       <div>
         <div>Привет, Геннадий!</div>
         <div>Двери и окна закрыты, сингализация включена.</div>
 
-        <div class="whether">
+        <div class="whether-widget">
           <div>
-            <div class="whether__home">Дома</div>
-            <div class="whether__">+23</div>
+            <div class="whether-widget__place-name">Дома</div>
+            <div class="whether-widget__temperature">+23</div>
           </div>
           <div>
-            <div>За окном</div>
-            <div>+19</div>
+            <div class="whether-widget__place-name">За окном</div>
+            <div class="whether-widget__temperature">+19</div>
           </div>
           <img class="whether__logo"
                srcset="../assets/cloud-drizzle.png 1x,
@@ -52,21 +52,31 @@
 
     <section id="featured_scenarios">
       <div>Избранные сценарии</div>
-      <div></div>
+      <div>
+        <div>
+          <img class=""
+               srcset="../assets/icon_sun_2@1x.png 1x,
+                       ../assets/icon_sun_2@2x.png 2x"
+               src="../assets/icon_sun_2@1x.png"
+               alt="sun">
+          <div>Выключить весь свет в доме и во дворе</div>
+        </div>
+      </div>
     </section>
 
     <section id="featured_devices">
       <div>
         <div>Избранные устройства</div>
         <ul>
-          <li><button>Все</button></li>
-          <li><button>Кухня</button></li>
-          <li><button>Зал</button></li>
-          <li><button>Лампочки</button></li>
-          <li><button>Камеры</button></li>
+          <li>Все</li>
+          <li>Кухня</li>
+          <li>Зал</li>
+          <li>Лампочки</li>
+          <li>Камеры</li>
         </ul>
       </div>
-      <div></div>
+      <div>
+      </div>
     </section>
   </main>
 

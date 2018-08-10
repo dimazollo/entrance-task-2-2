@@ -20,6 +20,11 @@
   color: #858585;
 }
 
+.footer-menu__menu-item:hover {
+  opacity: 1;
+  color: #cc0000;
+}
+
 .footer__copyright {
   display: inline-block;
   float: right;
