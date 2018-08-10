@@ -1,4 +1,50 @@
-.main {
+@import "whether-widget.css";
+@import "house-item.css";
+
+.main-content {
   flex: 1 0 auto;
+  padding: 0 40px;
 }
 
+.main-widget {
+  display: flex;
+  flex-direction: column;
+  width: 630px;
+  height: 331px;
+  background-image: -webkit-image-set(
+      url("../assets/bg@1x.png") 1x,
+      url("../assets/bg@2x.png") 2x
+  );
+  background-repeat: no-repeat;
+  background-position: 40% 50%;
+  background-clip: border-box;
+  border-radius: 20px;
+  min-width: 285px;
+}
+
+.main-section {
+  margin: 30px 0;
+}
+
+.main-section__name {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.info-pane {
+  padding: 26px 0 0 25px;
+}
+
+.info-pane__greetings {
+  font-weight: bold;
+  font-size: 27px;
+  line-height: 1.4;
+  color: #333333;
+}
+
+.info-pane__status {
+  font-size: 14px;
+  color: #333333;
+}

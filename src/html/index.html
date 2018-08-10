@@ -23,50 +23,55 @@
     </ul>
   </header>
 
-  <main class="main">
-    <section id="main">
-      <div>Главное</div>
-      <div>
-        <div>Привет, Геннадий!</div>
-        <div>Двери и окна закрыты, сингализация включена.</div>
+  <main class="main-content">
+    <section id="main" class="main-section">
+      <div class="main-section__name">Главное</div>
+      <div class="main-widget">
+        <div class="info-pane">
+          <div class="info-pane__greetings">Привет, Геннадий!</div>
+          <div class="info-pane__status">Двери и окна закрыты, сигнализация включена.</div>
 
-        <div class="whether-widget">
-          <div>
-            <div class="whether-widget__place-name">Дома</div>
-            <div class="whether-widget__temperature">+23</div>
+          <div class="whether-widget">
+            <div class="whether-widget__whether-item">
+              <div class="whether-widget__place-name">Дома</div>
+              <div class="whether-widget__temperature">+23</div>
+            </div>
+            <div class="whether-widget__whether-item">
+              <div class="whether-widget__place-name">За окном</div>
+              <div class="whether-widget__temperature">+19</div>
+              <img class="whether-widget__icon"
+                   srcset="../assets/cloud-drizzle.png 1x,
+                         ../assets/cloud-drizzle@2x.png 2x"
+                   src="../assets/cloud-drizzle.png"
+                   alt="cloudy and drizzle">
+            </div>
           </div>
-          <div>
-            <div class="whether-widget__place-name">За окном</div>
-            <div class="whether-widget__temperature">+19</div>
-          </div>
-          <img class="whether__logo"
-               srcset="../assets/cloud-drizzle.png 1x,
-               ../assets/cloud-drizzle@2x.png 2x"
-               src="../assets/cloud-drizzle.png"
-               alt="cloudy and drizzle">
         </div>
+        <div class="schedule-pane">
 
-        <div></div>
+        </div>
       </div>
     </section>
 
-    <section id="featured_scenarios">
-      <div>Избранные сценарии</div>
+    <section id="featured_scenarios" class="main-section">
+      <div class="main-section__name">Избранные сценарии</div>
       <div>
-        <div>
+        <div class="house-item house-item_size_medium">
           <img class=""
                srcset="../assets/icon_sun_2@1x.png 1x,
                        ../assets/icon_sun_2@2x.png 2x"
                src="../assets/icon_sun_2@1x.png"
                alt="sun">
-          <div>Выключить весь свет в доме и во дворе</div>
+          <div>
+            <div class="house-item__name">Выключить весь свет в доме и во дворе</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="featured_devices">
+    <section id="featured_devices" class="main-section">
       <div>
-        <div>Избранные устройства</div>
+        <div class="main-section__name">Избранные устройства</div>
         <ul>
           <li>Все</li>
           <li>Кухня</li>
