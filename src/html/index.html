@@ -9,18 +9,17 @@
   <link rel="stylesheet" href="../css/app.css">
 </head>
 <body>
-<header>
-  <nav>
-    <a href="#"><img srcset="../assets/Яндекс_Дом@1x.png 1x,
-                             ../assets/Яндекс_Дом@2x.png 2x"
-                     src="../assets/Яндекс_Дом@1x.png"
-                     alt="Яндекс Дом"></a>
-    <ul>
-      <li>Сводка</li>
-      <li>Устройства</li>
-      <li>Сценарии</li>
-    </ul>
-  </nav>
+<header class="header">
+  <img class="header__logo"
+       srcset="../assets/Яндекс_Дом@1x.png 1x,
+               ../assets/Яндекс_Дом@2x.png 2x"
+       src="../assets/Яндекс_Дом@1x.png"
+       alt="Яндекс Дом">
+  <ul class="header__menu">
+    <li class="header__menu-item header__menu-item_active_true">Сводка</li>
+    <li class="header__menu-item header__menu-item_active_false">Устройства</li>
+    <li class="header__menu-item header__menu-item_active_false">Сценарии</li>
+  </ul>
 </header>
 <main>
   <section id="main">
@@ -34,11 +33,21 @@
   <section id="featured_devices">
     <h2>Избранные устройства</h2>
     <ul>
-      <li><button>Все</button></li>
-      <li><button>Кухня</button></li>
-      <li><button>Зал</button></li>
-      <li><button>Лампочки</button></li>
-      <li><button>Камеры</button></li>
+      <li>
+        <button>Все</button>
+      </li>
+      <li>
+        <button>Кухня</button>
+      </li>
+      <li>
+        <button>Зал</button>
+      </li>
+      <li>
+        <button>Лампочки</button>
+      </li>
+      <li>
+        <button>Камеры</button>
+      </li>
     </ul>
   </section>
 </main>
