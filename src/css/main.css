@@ -78,11 +78,22 @@
   margin-bottom: 20px;
 }
 
+.arrow {
+  cursor: pointer;
+  transition: .15s ease-out;
+}
+
+.arrow:hover {
+  filter: opacity(1);
+}
+
 .arrow_direction_left {
-  padding-right: 15px;
-  transform: rotate(0deg);
+  padding-left: 15px;
+  filter: opacity(0.3);
+  transform: rotate(180deg);
 }
 
 .arrow_direction_right {
-  transform: rotate(180deg);
+  filter: opacity(0.3);
+  transform: rotate(0deg);
 }

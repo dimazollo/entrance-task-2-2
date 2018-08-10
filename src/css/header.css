@@ -23,11 +23,13 @@
   list-style-type: none;
   margin: 0 14px;
   cursor: pointer;
+  transition: color .15s ease-out;
 }
 
 .header-menu__menu-item:hover {
   opacity: 1;
   color: #cc0000;
+  text-shadow: 0 0 4px #cc000022;
 }
 
 .header-menu__menu-item_active_true {

@@ -7,7 +7,8 @@
   justify-content: space-between;
   border-radius: 15px;
   background-color: #F7F7F7;
-  height: 100px
+  height: 100px;
+  cursor: pointer;
 }
 
 .house-item_size_big {
