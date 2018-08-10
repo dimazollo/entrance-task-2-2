@@ -3,7 +3,7 @@
 
 .main-content {
   flex: 1 0 auto;
-  padding: 0 40px;
+  padding-left: 40px;
 }
 
 .main-widget {
@@ -26,10 +26,31 @@
   margin: 30px 0;
 }
 
+#main {
+  margin-right: 26px;
+}
+
+#featured_scenarios {
+  width: 100%;
+  margin-right: 40px;
+}
+
+#featured_devices {
+
+}
+
+.main-content__first-line {
+  display: flex;
+}
+
 .main-section__name {
   font-weight: bold;
   font-size: 18px;
   color: #333333;
+  margin-bottom: 20px;
+}
+
+.main-section__pagination {
   margin-bottom: 20px;
 }
 
@@ -47,4 +68,21 @@
 .info-pane__status {
   font-size: 14px;
   color: #333333;
+}
+
+.flex__justify_space-between {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.arrow_direction_left {
+  padding-right: 15px;
+  transform: rotate(0deg);
+}
+
+.arrow_direction_right {
+  transform: rotate(180deg);
 }

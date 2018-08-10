@@ -24,50 +24,61 @@
   </header>
 
   <main class="main-content">
-    <section id="main" class="main-section">
-      <div class="main-section__name">Главное</div>
-      <div class="main-widget">
-        <div class="info-pane">
-          <div class="info-pane__greetings">Привет, Геннадий!</div>
-          <div class="info-pane__status">Двери и окна закрыты, сигнализация включена.</div>
 
-          <div class="whether-widget">
-            <div class="whether-widget__whether-item">
-              <div class="whether-widget__place-name">Дома</div>
-              <div class="whether-widget__temperature">+23</div>
-            </div>
-            <div class="whether-widget__whether-item">
-              <div class="whether-widget__place-name">За окном</div>
-              <div class="whether-widget__temperature">+19</div>
-              <img class="whether-widget__icon"
-                   srcset="../assets/cloud-drizzle.png 1x,
+    <div class="main-content__first-line">
+
+      <section id="main" class="main-section">
+        <div class="main-section__name">Главное</div>
+        <div class="main-widget">
+          <div class="info-pane">
+            <div class="info-pane__greetings">Привет, Геннадий!</div>
+            <div class="info-pane__status">Двери и окна закрыты, сигнализация включена.</div>
+
+            <div class="whether-widget">
+              <div class="whether-widget__whether-item">
+                <div class="whether-widget__place-name">Дома</div>
+                <div class="whether-widget__temperature">+23</div>
+              </div>
+              <div class="whether-widget__whether-item">
+                <div class="whether-widget__place-name">За окном</div>
+                <div class="whether-widget__temperature">+19</div>
+                <img class="whether-widget__icon"
+                     srcset="../assets/cloud-drizzle.png 1x,
                          ../assets/cloud-drizzle@2x.png 2x"
-                   src="../assets/cloud-drizzle.png"
-                   alt="cloudy and drizzle">
+                     src="../assets/cloud-drizzle.png"
+                     alt="cloudy and drizzle">
+              </div>
+            </div>
+          </div>
+          <div class="schedule-pane">
+
+          </div>
+        </div>
+      </section>
+
+      <section id="featured_scenarios" class="main-section">
+        <div class="flex__justify_space-between">
+          <div class="main-section__name">Избранные сценарии</div>
+          <div class="main-section__pagination">
+            <img class="arrow_direction_left" src="../assets/Icons/arrow-left.svg" alt="<">
+            <img class="arrow_direction_right" src="../assets/Icons/arrow-left.svg" alt=">">
+          </div>
+        </div>
+        <div>
+          <div class="house-item house-item_size_medium">
+            <img class=""
+                 srcset="../assets/icon_sun_2@1x.png 1x,
+                       ../assets/icon_sun_2@2x.png 2x"
+                 src="../assets/icon_sun_2@1x.png"
+                 alt="sun">
+            <div>
+              <div class="house-item__name">Выключить весь свет в доме и во дворе</div>
             </div>
           </div>
         </div>
-        <div class="schedule-pane">
+      </section>
 
-        </div>
-      </div>
-    </section>
-
-    <section id="featured_scenarios" class="main-section">
-      <div class="main-section__name">Избранные сценарии</div>
-      <div>
-        <div class="house-item house-item_size_medium">
-          <img class=""
-               srcset="../assets/icon_sun_2@1x.png 1x,
-                       ../assets/icon_sun_2@2x.png 2x"
-               src="../assets/icon_sun_2@1x.png"
-               alt="sun">
-          <div>
-            <div class="house-item__name">Выключить весь свет в доме и во дворе</div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
 
     <section id="featured_devices" class="main-section">
       <div>
@@ -86,13 +97,13 @@
   </main>
 
   <footer class="footer">
-      <ul class="footer__footer-menu">
-        <li><a class="footer-menu__menu-item" href="#">Помощь</a></li>
-        <li><a class="footer-menu__menu-item" href="#">Обратная связь</a></li>
-        <li><a class="footer-menu__menu-item" href="#">Разработчикам</a></li>
-        <li><a class="footer-menu__menu-item" href="#">Условия использования</a></li>
-      </ul>
-      <span class="footer__copyright">&copy;2001-2017 ООО &laquo;Яндекс&raquo;</span>
+    <ul class="footer__footer-menu">
+      <li><a class="footer-menu__menu-item" href="#">Помощь</a></li>
+      <li><a class="footer-menu__menu-item" href="#">Обратная связь</a></li>
+      <li><a class="footer-menu__menu-item" href="#">Разработчикам</a></li>
+      <li><a class="footer-menu__menu-item" href="#">Условия использования</a></li>
+    </ul>
+    <span class="footer__copyright">&copy;2001-2017 ООО &laquo;Яндекс&raquo;</span>
   </footer>
 </div>
 </body>
