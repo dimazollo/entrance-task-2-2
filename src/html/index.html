@@ -9,56 +9,48 @@
   <link rel="stylesheet" href="../css/app.css">
 </head>
 <body>
-<header class="header">
-  <img class="header__logo"
-       srcset="../assets/Яндекс_Дом@1x.png 1x,
+<div class="wrapper">
+  <header class="header">
+    <img class="header__logo"
+         srcset="../assets/Яндекс_Дом@1x.png 1x,
                ../assets/Яндекс_Дом@2x.png 2x"
-       src="../assets/Яндекс_Дом@1x.png"
-       alt="Яндекс Дом">
-  <ul class="header__menu">
-    <li class="header__menu-item header__menu-item_active_true">Сводка</li>
-    <li class="header__menu-item header__menu-item_active_false">Устройства</li>
-    <li class="header__menu-item header__menu-item_active_false">Сценарии</li>
-  </ul>
-</header>
-<main>
-  <section id="main">
-    <h2>Главное</h2>
-    <div></div>
-  </section>
-  <section id="featured_scenarios">
-    <h2>Избранные сценарии</h2>
-
-  </section>
-  <section id="featured_devices">
-    <h2>Избранные устройства</h2>
-    <ul>
-      <li>
-        <button>Все</button>
-      </li>
-      <li>
-        <button>Кухня</button>
-      </li>
-      <li>
-        <button>Зал</button>
-      </li>
-      <li>
-        <button>Лампочки</button>
-      </li>
-      <li>
-        <button>Камеры</button>
-      </li>
+         src="../assets/Яндекс_Дом@1x.png"
+         alt="Яндекс Дом">
+    <ul class="header__menu">
+      <li class="header__menu__menu-item header__menu__menu-item_active_true">Сводка</li>
+      <li class="header__menu__menu-item header__menu__menu-item_active_false">Устройства</li>
+      <li class="header__menu__menu-item header__menu__menu-item_active_false">Сценарии</li>
     </ul>
-  </section>
-</main>
-<footer>
-  <ul>
-    <li><a href="#">Помощь</a></li>
-    <li><a href="#">Обратная связь</a></li>
-    <li><a href="#">Разработчикам</a></li>
-    <li><a href="#">Условия использования</a></li>
-  </ul>
-  <span>&copy;2001-2017 ООО &laquo;Яндекс&raquo;</span>
-</footer>
+  </header>
+  <main class="main">
+    <section id="main">
+      <h2>Главное</h2>
+      <div></div>
+    </section>
+    <section id="featured_scenarios">
+      <h2>Избранные сценарии</h2>
+
+    </section>
+    <section id="featured_devices">
+      <h2>Избранные устройства</h2>
+      <ul>
+        <li><button>Все</button></li>
+        <li><button>Кухня</button></li>
+        <li><button>Зал</button></li>
+        <li><button>Лампочки</button></li>
+        <li><button>Камеры</button></li>
+      </ul>
+    </section>
+  </main>
+  <footer class="footer">
+      <ul class="footer__menu">
+        <li><a class="footer__menu__menu-item" href="#">Помощь</a></li>
+        <li><a class="footer__menu__menu-item" href="#">Обратная связь</a></li>
+        <li><a class="footer__menu__menu-item" href="#">Разработчикам</a></li>
+        <li><a class="footer__menu__menu-item" href="#">Условия использования</a></li>
+      </ul>
+      <span class="footer__copyright">&copy;2001-2017 ООО &laquo;Яндекс&raquo;</span>
+  </footer>
+</div>
 </body>
 </html>
