@@ -16,38 +16,66 @@
                ../assets/Яндекс_Дом@2x.png 2x"
          src="../assets/Яндекс_Дом@1x.png"
          alt="Яндекс Дом">
-    <ul class="header__menu">
-      <li class="header__menu__menu-item header__menu__menu-item_active_true">Сводка</li>
-      <li class="header__menu__menu-item header__menu__menu-item_active_false">Устройства</li>
-      <li class="header__menu__menu-item header__menu__menu-item_active_false">Сценарии</li>
+    <ul class="header__header-menu">
+      <li class="header-menu__menu-item header-menu__menu-item_active_true"><div>Сводка</div></li>
+      <li class="header-menu__menu-item header-menu__menu-item_active_false"><div>Устройства</div></li>
+      <li class="header-menu__menu-item header-menu__menu-item_active_false"><div>Сценарии</div></li>
     </ul>
   </header>
+
   <main class="main">
-    <section id="main">
-      <h2>Главное</h2>
+    <section>
+      <div>Главное</div>
+      <div>
+        <div>Привет, Геннадий!</div>
+        <div>Двери и окна закрыты, сингализация включена.</div>
+
+        <div class="whether">
+          <div>
+            <div class="whether__home">Дома</div>
+            <div class="whether__">+23</div>
+          </div>
+          <div>
+            <div>За окном</div>
+            <div>+19</div>
+          </div>
+          <img class="whether__logo"
+               srcset="../assets/cloud-drizzle.png 1x,
+               ../assets/cloud-drizzle@2x.png 2x"
+               src="../assets/cloud-drizzle.png"
+               alt="cloudy and drizzle">
+        </div>
+
+        <div></div>
+      </div>
+    </section>
+
+    <section id="featured_scenarios">
+      <div>Избранные сценарии</div>
       <div></div>
     </section>
-    <section id="featured_scenarios">
-      <h2>Избранные сценарии</h2>
 
-    </section>
     <section id="featured_devices">
-      <h2>Избранные устройства</h2>
-      <ul>
-        <li><button>Все</button></li>
-        <li><button>Кухня</button></li>
-        <li><button>Зал</button></li>
-        <li><button>Лампочки</button></li>
-        <li><button>Камеры</button></li>
-      </ul>
+      <div>
+        <div>Избранные устройства</div>
+        <ul>
+          <li><button>Все</button></li>
+          <li><button>Кухня</button></li>
+          <li><button>Зал</button></li>
+          <li><button>Лампочки</button></li>
+          <li><button>Камеры</button></li>
+        </ul>
+      </div>
+      <div></div>
     </section>
   </main>
+
   <footer class="footer">
-      <ul class="footer__menu">
-        <li><a class="footer__menu__menu-item" href="#">Помощь</a></li>
-        <li><a class="footer__menu__menu-item" href="#">Обратная связь</a></li>
-        <li><a class="footer__menu__menu-item" href="#">Разработчикам</a></li>
-        <li><a class="footer__menu__menu-item" href="#">Условия использования</a></li>
+      <ul class="footer__footer-menu">
+        <li><a class="footer-menu__menu-item" href="#">Помощь</a></li>
+        <li><a class="footer-menu__menu-item" href="#">Обратная связь</a></li>
+        <li><a class="footer-menu__menu-item" href="#">Разработчикам</a></li>
+        <li><a class="footer-menu__menu-item" href="#">Условия использования</a></li>
       </ul>
       <span class="footer__copyright">&copy;2001-2017 ООО &laquo;Яндекс&raquo;</span>
   </footer>

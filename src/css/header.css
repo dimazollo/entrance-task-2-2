@@ -10,7 +10,7 @@
   margin: 0 40px;
 }
 
-.header__menu {
+.header__header-menu {
   display: flex;
   align-items: center;
   font-weight: bold;
@@ -19,16 +19,20 @@
   color: #333333;
 }
 
-.header__menu__menu-item {
+.header-menu__menu-item {
   list-style-type: none;
   margin: 0 14px;
   cursor: pointer;
 }
 
-.header__menu__menu-item_active_true {
+.header-menu__menu-item:hover {
+  box-shadow: 0 4px #F0F0F0;
+}
+
+.header-menu__menu-item_active_true {
   opacity: 1;
 }
 
-.header__menu__menu-item_active_false {
+.header-menu__menu-item_active_false {
   opacity: 0.6;
 }

@@ -8,14 +8,14 @@
   font-size: 12px;
 }
 
-.footer__menu {
+.footer__footer-menu {
   width: 404px;
   display: flex;
   justify-content: space-between;
   list-style-type: none;
 }
 
-.footer__menu__menu-item {
+.footer-menu__menu-item {
   text-decoration: none;
   color: #858585;
 }
