@@ -23,6 +23,6 @@
   flex-direction: column;
   min-height: 100vh;
 
-  /* TODO Уточнить!!! */
-  min-width: 700px;
+  /* TODO: Уточнить! */
+  min-width: 350px;
 }
