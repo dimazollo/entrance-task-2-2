@@ -1,3 +1,7 @@
+@import "header.css";
+@import "main.css";
+@import "footer.css";
+
 * {
   padding: 0;
   margin: 0;
@@ -21,71 +25,4 @@
 
   /* TODO Уточнить!!! */
   min-width: 700px;
-}
-
-.header {
-  flex: 0 0 auto;
-  height: 92px;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #F0F0F0;
-}
-
-.header__logo {
-  margin: 0 40px;
-}
-
-.header__menu {
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 20px;
-  color: #333333;
-}
-
-.header__menu__menu-item {
-  list-style-type: none;
-  margin: 0 14px;
-  cursor: pointer;
-}
-
-.header__menu__menu-item_active_true {
-  opacity: 1;
-}
-
-.header__menu__menu-item_active_false {
-  opacity: 0.6;
-}
-
-.main {
-  flex: 1 0 auto;
-}
-
-.footer {
-  flex: 0 0 auto;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 36px 0 40px;
-  font-size: 12px;
-}
-
-.footer__menu {
-  width: 404px;
-  display: flex;
-  justify-content: space-between;
-  list-style-type: none;
-}
-
-.footer__menu__menu-item {
-  text-decoration: none;
-  color: #858585;
-}
-
-.footer__copyright {
-  display: inline-block;
-  float: right;
-  color: #858585;
 }
