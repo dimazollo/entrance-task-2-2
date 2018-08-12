@@ -27,7 +27,7 @@
 }
 
 .main-section {
-  margin: 30px 0;
+  margin: 15px 0;
 }
 
 #main {
@@ -45,6 +45,7 @@
 
 .main-content__first-line {
   display: flex;
+  margin-top: 15px;
   margin-left: 40px;
 }
 
@@ -109,8 +110,10 @@
 
 .devices-pane {
   display: grid;
+  position: relative;
+  top: -1px;
   overflow: hidden;
-  padding-left: 40px;
+  padding: 1px 0 5px 40px;
   grid-auto-flow: column;
   grid-auto-columns: 200px;
   grid-auto-rows: 120px;
