@@ -24,6 +24,10 @@
   min-height: 100vh;
 
   /* TODO: Уточнить! */
-  min-width: 1151px;
-  max-width: 1366px;
+  /*min-width: 1151px;*/
+  /*max-width: 1366px;*/
+}
+
+@media screen and (max-width: 576px){
+
 }

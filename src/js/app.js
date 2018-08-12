@@ -116,6 +116,12 @@
     }, 'slow')
   })
 
+  $('#featured-scenarios .scenarios-pane').resize(function () {
+    // event.preventDefault()
+    if ($('#featured-scenarios .scenarios-pane').width()) {
+
+    }
+  })
 })()
 
 // Template method for house device or action element

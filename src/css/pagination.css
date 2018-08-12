@@ -1,4 +1,10 @@
+.pagination {
+  margin-left: 15px;
+  white-space: nowrap;
+}
+
 .pagination__arrow {
+  display: inline-block;
   cursor: pointer;
   filter: opacity(0.3);
   transition: .15s ease-out;
