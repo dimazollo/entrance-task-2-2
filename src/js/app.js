@@ -72,6 +72,22 @@
     generateHouseItem(devicesPaneElement, item, 'big')
   })
 
+
+  // Horizontal scroll with arrows on screen
+  $('#featured-devices .arrow_direction_right').click(function () {
+    event.preventDefault()
+    $('#devices-pane').animate({
+      scrollLeft: '+=200px'
+    }, 'slow')
+  })
+
+  $('#featured-devices .arrow_direction_left').click(function () {
+    event.preventDefault()
+    $('#devices-pane').animate({
+      scrollLeft: '-=200px'
+    }, 'slow')
+  })
+
 })()
 
 function generateHouseItem (container, data, elementSize) {
@@ -93,6 +109,4 @@ function generateHouseItem (container, data, elementSize) {
   container.appendChild(newHtmlElement)
 }
 
-function scroll () {
 
-}
