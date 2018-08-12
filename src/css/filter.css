@@ -1,0 +1,33 @@
+.filter-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  font-weight: bold;
+  font-size: 13px;
+  color: #000000;
+  text-align: left;
+}
+
+.filter-menu__item {
+  margin: 0 5px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  background-color: #F7F7F7;
+  list-style-type: none;
+  cursor: pointer;
+  transition: 0.15s ease-out;
+}
+
+.filter-menu__item:hover {
+  background-color: #FFCD00;
+}
+
+.filter-menu__item_active_true {
+  background-color: #FFD93E;
+}
+
+.filter-menu__item_active_false {
+  background-color: #F7F7F7;
+}

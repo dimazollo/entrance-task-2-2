@@ -1,5 +1,7 @@
 @import "whether-widget.css";
 @import "house-item.css";
+@import "pagination.css";
+@import "filter.css";
 
 .main-content {
   flex: 1 0 auto;
@@ -96,60 +98,11 @@
   align-items: center;
 }
 
-.pagination__arrow {
-  cursor: pointer;
-  filter: opacity(0.3);
-  transition: .15s ease-out;
-}
-
-.pagination__arrow:hover {
-  filter: opacity(1);
-}
-
-.arrow_direction_left {
-  padding-left: 15px;
-  transform: rotate(180deg);
-}
-
-.arrow_direction_right {
-  transform: rotate(0deg);
-}
-
 .scenarios-pane {
   display: grid;
   grid-template-columns: repeat(auto-fit, 200px);
   grid-auto-rows: 100px;
   grid-gap: 15px 15px;
-}
-
-.filter-menu {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-
-  font-weight: bold;
-  font-size: 13px;
-  color: #000000;
-  text-align: left;
-}
-
-.filter-menu__item {
-  margin: 0 5px;
-  padding: 8px 15px;
-  border-radius: 20px;
-  background-color: #F7F7F7;
-  list-style-type: none;
-  cursor: pointer;
-  transition: 0.15s ease-out;
-}
-
-.filter-menu__item:hover {
-  background-color: #FFCD00;
-}
-
-.filter-menu__item_selected_true {
-  background-color: #FFD93E;
 }
 
 .devices-pane {
