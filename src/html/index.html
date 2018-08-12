@@ -61,13 +61,13 @@
       <section id="featured-scenarios" class="main-section">
         <div class="main-section__header flex__justify_space-between">
           <div class="section-header__name">Избранные сценарии</div>
-          <div class="section-header__pagination">
-            <img class="arrow arrow_direction_left"
+          <div class="pagination">
+            <img class="pagination__arrow arrow_direction_left"
                  srcset="../assets/Icons_/Arrow_Right_/arrow@1x.png 1x,
                          ../assets/Icons_/Arrow_Right_/arrow@2x.png 2x"
                  src="../assets/Icons_/Arrow_Right_/arrow@1x.png"
                  alt="<">
-            <img class="arrow arrow_direction_right"
+            <img class="pagination__arrow arrow_direction_right"
                  srcset="../assets/Icons_/Arrow_Right_/arrow@1x.png 1x,
                          ../assets/Icons_/Arrow_Right_/arrow@2x.png 2x"
                  src="../assets/Icons_/Arrow_Right_/arrow@1x.png"
@@ -139,15 +139,29 @@
     </div>
 
     <section id="featured-devices" class="main-section">
-      <div>
-        <div class="section-header__name">Избранные устройства</div>
-        <ul>
-          <li>Все</li>
-          <li>Кухня</li>
-          <li>Зал</li>
-          <li>Лампочки</li>
-          <li>Камеры</li>
-        </ul>
+      <div class="main-section__header">
+        <div>
+          <div class="section-header__name">Избранные устройства</div>
+          <ul class="filter-menu">
+            <li class="filter-menu__item filter-menu__item_selected_true">Все</li>
+            <li class="filter-menu__item ">Кухня</li>
+            <li class="filter-menu__item ">Зал</li>
+            <li class="filter-menu__item ">Лампочки</li>
+            <li class="filter-menu__item ">Камеры</li>
+          </ul>
+        </div>
+        <div class="pagination">
+          <img class="pagination__arrow arrow_direction_left"
+               srcset="../assets/Icons_/Arrow_Right_/arrow@1x.png 1x,
+                         ../assets/Icons_/Arrow_Right_/arrow@2x.png 2x"
+               src="../assets/Icons_/Arrow_Right_/arrow@1x.png"
+               alt="<">
+          <img class="pagination__arrow arrow_direction_right"
+               srcset="../assets/Icons_/Arrow_Right_/arrow@1x.png 1x,
+                         ../assets/Icons_/Arrow_Right_/arrow@2x.png 2x"
+               src="../assets/Icons_/Arrow_Right_/arrow@1x.png"
+               alt=">">
+        </div>
       </div>
       <div>
       </div>
