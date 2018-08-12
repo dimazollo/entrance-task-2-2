@@ -1,9 +1,13 @@
 .header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
   flex: 0 0 auto;
   height: 92px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #F0F0F0;
+  background-color: #FFFFFF;
 }
 
 .header__logo {
