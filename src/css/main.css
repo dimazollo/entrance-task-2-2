@@ -11,7 +11,8 @@
 
 .main-widget {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   width: 630px;
   height: 331px;
   background-image: url("../assets/bg@1x.png");
@@ -24,6 +25,16 @@
   background-clip: border-box;
   border-radius: 20px;
   min-width: 285px;
+}
+
+.schedule-pane {
+  display: grid;
+  padding: 20px 20px 0 0;
+  grid-auto-columns: 200px;
+  grid-auto-rows: 120px;
+  grid-gap: 15px 15px;
+  position: relative;
+  overflow: hidden;
 }
 
 .main-section {
@@ -40,7 +51,8 @@
 }
 
 #featured-devices {
-
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .main-content__first-line {
@@ -50,7 +62,7 @@
 }
 
 .main-section__header {
- margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .main-section__header_margin_right {
@@ -66,7 +78,7 @@
 }
 
 .section-header__name_margin_right {
-   margin-right: 7px;
+  margin-right: 7px;
 }
 
 .pagination {
@@ -103,7 +115,7 @@
 
 .scenarios-pane {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
+  grid-template-columns: repeat(auto-fill, 200px);
   grid-auto-rows: 100px;
   grid-gap: 15px 15px;
 }
