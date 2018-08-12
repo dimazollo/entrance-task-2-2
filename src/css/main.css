@@ -152,3 +152,12 @@
   background-color: #FFD93E;
 }
 
+.devices-pane {
+  display: grid;
+  overflow: hidden;
+  /*grid-template-columns: repeat(auto-fit, 200px);*/
+  grid-auto-flow: column;
+  grid-auto-columns: 200px;
+  grid-auto-rows: 120px;
+  grid-gap: 15px 15px;
+}
