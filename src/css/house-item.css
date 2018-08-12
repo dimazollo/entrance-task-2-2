@@ -44,6 +44,7 @@
 
 .house-item__description {
   padding: 0 1px;
+  margin-top: 4px;
   font-size: 12px;
   color: #858585;
   letter-spacing: 0;
