@@ -111,14 +111,8 @@
   display: grid;
   overflow: hidden;
   padding-left: 40px;
-  /*overflow: -moz-scrollbars-none;*/
-  /*grid-template-columns: repeat(auto-fit, 200px);*/
   grid-auto-flow: column;
   grid-auto-columns: 200px;
   grid-auto-rows: 120px;
   grid-gap: 15px 15px;
 }
-
-/*.devices-pane::-webkit-scrollbar {*/
-  /*display: none;*/
-/*}*/
