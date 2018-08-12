@@ -5,7 +5,7 @@
 
 .main-content {
   flex: 1 0 auto;
-  padding-left: 40px;
+  /*padding-left: 40px;*/
   margin-top: 92px;
 }
 
@@ -45,6 +45,7 @@
 
 .main-content__first-line {
   display: flex;
+  margin-left: 40px;
 }
 
 .main-section__header {
@@ -53,6 +54,7 @@
 
 .main-section__header_margin_right {
   margin-right: 40px;
+  margin-left: 40px;
 }
 
 .section-header__name {
@@ -108,9 +110,15 @@
 .devices-pane {
   display: grid;
   overflow: hidden;
+  padding-left: 40px;
+  /*overflow: -moz-scrollbars-none;*/
   /*grid-template-columns: repeat(auto-fit, 200px);*/
   grid-auto-flow: column;
   grid-auto-columns: 200px;
   grid-auto-rows: 120px;
   grid-gap: 15px 15px;
 }
+
+/*.devices-pane::-webkit-scrollbar {*/
+  /*display: none;*/
+/*}*/

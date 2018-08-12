@@ -60,6 +60,7 @@
     }
   ]
 
+  // Init
   var scenariosPaneElement = document.querySelector(
     '#featured-scenarios > .scenarios-pane')
   scenarios.forEach(function (item) {
@@ -90,6 +91,7 @@
 
 })()
 
+// Template method for house device or action element
 function generateHouseItem (container, data, elementSize) {
   var template = `<div class="house-item house-item_size_${elementSize}">
                     <img class="house-item__icon"
