@@ -1,4 +1,4 @@
-(function main() {
+(function main () {
   var scenarios = [
     {
       icon: 'icon_sun_2',
@@ -23,14 +23,58 @@
     }
   ]
 
+  var devices = [
+    {
+      icon: 'icon_sun_2',
+      name: 'Xiaomi Yeelight LED',
+      description: 'Включено'
+    },
+    {
+      icon: 'icon_sun',
+      name: 'D-Link Omna 180 Cam',
+      description: 'Включится в 17:00'
+    },
+    {
+      icon: 'icon_temperature',
+      name: 'Elgato Eve Degree Connected',
+      description: 'Выключено до 17:00'
+    },
+    {
+      icon: 'icon_sun',
+      name: 'LIFX Mini Day & Dusk A60 E27',
+      description: 'Включится в 17:00'
+    },
+    {
+      icon: 'icon_sun_2',
+      name: 'Xiaomi Mi Air Purifier 2S',
+      description: 'Включено'
+    },
+    {
+      icon: 'icon_sun',
+      name: 'Philips Zhirui',
+      description: 'Выключено'
+    },
+    {
+      icon: 'icon_sun_2',
+      name: 'Xiaomi Some Device'
+    }
+  ]
+
   var scenariosPaneElement = document.querySelector(
     '#featured-scenarios > .scenarios-pane')
   scenarios.forEach(function (item) {
-    generateHouseItems(scenariosPaneElement, item, 'medium')
+    generateHouseItem(scenariosPaneElement, item, 'medium')
   })
+
+  var devicesPaneElement = document.querySelector(
+    '#featured-devices > .devices-pane')
+  devices.forEach(function (item) {
+    generateHouseItem(devicesPaneElement, item, 'big')
+  })
+
 })()
 
-function generateHouseItems (container, data, elementSize) {
+function generateHouseItem (container, data, elementSize) {
   var template = `<div class="house-item house-item_size_${elementSize}">
                     <img class="house-item__icon"
                          srcset="../assets/${data.icon}@1x.png 1x,
@@ -39,10 +83,16 @@ function generateHouseItems (container, data, elementSize) {
                          alt="${data.icon}">
                     <div>
                       <div class="house-item__name">${data.name}</div>
-                      ${data.description ? '<div class="house-item__description">' + data.description + '</div>' : ''}
+                      ${data.description
+    ? '<div class="house-item__description">' + data.description + '</div>'
+    : ''}
                     </div>
                   </div>`
   var newHtmlElement = document.createElement('div')
   newHtmlElement.innerHTML = template
   container.appendChild(newHtmlElement)
+}
+
+function scroll () {
+
 }
