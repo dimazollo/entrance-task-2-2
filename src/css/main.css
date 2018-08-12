@@ -49,10 +49,19 @@
  margin-bottom: 20px;
 }
 
+.main-section__header_margin_right {
+  margin-right: 40px;
+}
+
 .section-header__name {
   font-weight: bold;
+  white-space: nowrap;
   font-size: 18px;
   color: #333333;
+}
+
+.section-header__name_margin_right {
+   margin-right: 7px;
 }
 
 .pagination {
@@ -78,6 +87,12 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.flex__justify_flex-start {
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -123,7 +138,7 @@
   margin: 0 5px;
   padding: 8px 15px;
   border-radius: 20px;
-
+  background-color: #F7F7F7;
   list-style-type: none;
   cursor: pointer;
   transition: 0.15s ease-out;
