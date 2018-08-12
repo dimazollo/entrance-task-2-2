@@ -1,4 +1,27 @@
 (function main () {
+  var scheduledActions = [
+    {
+      icon: 'icon_temperature',
+      name: 'Philips Cooler',
+      description: 'Начнёт охлаждать в 16:30'
+    },
+    {
+      icon: 'icon_sun',
+      name: 'Xiaomi Yeelight LED Smart Bulb',
+      description: 'Включится в 17:00'
+    },
+    {
+      icon: 'icon_sun',
+      name: 'Xiaomi Some Device',
+      description: 'Включится в 17:10'
+    },
+    {
+      icon: 'icon_sun',
+      name: 'Xiaomi Some Device',
+      description: 'Включится в 19:00'
+    }
+  ]
+
   var scenarios = [
     {
       icon: 'icon_sun_2',
@@ -61,6 +84,11 @@
   ]
 
   // Init
+  var schedulePaneElement = document.querySelector('#main .schedule-pane')
+  scheduledActions.forEach(function (action) {
+    generateHouseItem(schedulePaneElement, action, 'big')
+  })
+
   var scenariosPaneElement = document.querySelector(
     '#featured-scenarios > .scenarios-pane')
   scenarios.forEach(function (item) {
@@ -72,7 +100,6 @@
   devices.forEach(function (item) {
     generateHouseItem(devicesPaneElement, item, 'big')
   })
-
 
   // Horizontal scroll with arrows on screen
   $('#featured-devices .arrow_direction_right').click(function () {
