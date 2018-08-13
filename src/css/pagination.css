@@ -4,7 +4,7 @@
 }
 
 .pagination__arrow {
-  display: inline-block;
+  /*display: inline-block;*/
   cursor: pointer;
   filter: opacity(0.3);
   transition: .15s ease-out;
@@ -16,9 +16,8 @@
 
 .arrow_direction_left {
   padding-left: 15px;
-  transform: rotate(180deg);
+  transform: scale(-1, 1);
 }
 
 .arrow_direction_right {
-  transform: rotate(0deg);
 }
