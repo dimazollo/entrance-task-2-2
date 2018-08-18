@@ -137,14 +137,13 @@
   grid-gap: 15px 15px;
 }
 
+
 @media screen and (max-width: 970px) {
   .main-content__first-line {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
     margin: 15px 0 0 0;
-    /*margin-top: 15px;*/
-    /*margin-left: 40px;*/
   }
 
   #main {
@@ -177,3 +176,36 @@
     margin-right: 40px;
   }
 }
+
+/* TODO - перепроверить всё, кроме фоновой картинки */
+@media screen and (max-width: 710px) {
+  #main {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+  }
+
+  .main-widget {
+    align-self: stretch;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 331px; /* FIXME */
+    width: auto;
+    max-width: 630px;
+    min-width: 285px;
+
+    background-image: url("../assets/bg@1x.png");
+    background-image: -webkit-image-set(
+        url("../assets/bg@1x.png") 1x,
+        url("../assets/bg@2x.png") 2x
+    );
+    background-repeat: no-repeat;
+    background-position: 40% 50%;
+    background-clip: border-box;
+    border-radius: 20px;
+  }
+}
+
