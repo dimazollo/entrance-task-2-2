@@ -169,10 +169,11 @@
   }
 
   .scenarios-header {
-    width: 100%;
+    width: unset;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-left: 40px;
+    margin-right: 40px;
   }
 }
