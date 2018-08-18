@@ -209,3 +209,12 @@
   }
 }
 
+@media screen and (max-width: 750px){
+  .scenarios-pane {
+    overflow: auto;
+  }
+
+  .devices-pane {
+    overflow: auto;
+  }
+}
