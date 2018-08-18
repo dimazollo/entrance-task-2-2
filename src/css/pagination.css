@@ -21,3 +21,9 @@
 
 .arrow_direction_right {
 }
+
+@media screen and (max-width: 750px) {
+  .pagination {
+    display: none;
+  }
+}
