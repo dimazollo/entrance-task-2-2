@@ -139,13 +139,39 @@ function initScenariosLayout (scenariosData) {
   fillScenariosPage(scenariosPane, currentPage, tilesCount, scenariosData)
 
   $(window).resize(function () {
-    var newTilesCount = calculateColumnCount(scenariosPane.width(), tileWidth,
-      hGap) * rowCount
+    var newTilesCount = calculateColumnCount(
+      scenariosPane.width(), tileWidth, hGap) * rowCount
+
     if (tilesCount !== newTilesCount) {
       tilesCount = newTilesCount
+      if (scenariosData.length < currentPage * tilesCount) {
+        currentPage--
+      }
       fillScenariosPage(scenariosPane, currentPage, tilesCount, scenariosData)
     }
   })
+
+  $('#featured-scenarios .pagination__arrow.arrow_direction_left')
+      .click(function () {
+        if (currentPage > 0) {
+          currentPage--
+          scenariosPane.fadeOut(120, function () {
+            fillScenariosPage(scenariosPane, currentPage, tilesCount, scenariosData)
+            scenariosPane.fadeIn(120)
+          })
+        }
+      })
+
+  $('#featured-scenarios .pagination__arrow.arrow_direction_right')
+    .click(function () {
+      if (scenariosData.length > tilesCount * (currentPage + 1)) {
+        currentPage++
+        scenariosPane.fadeOut(120, function () {
+          fillScenariosPage(scenariosPane, currentPage, tilesCount, scenariosData)
+          scenariosPane.fadeIn(120)
+        })
+      }
+    })
 }
 
 function fillScenariosPage (
@@ -169,7 +195,7 @@ function generateHouseItem (container, data, elementSize) {
         <div class="house-item__name">${data.name}</div>
           ${data.description ?
       '<div class="house-item__description">' +
-      data.description +
+        data.description +
       '</div>'
       : ''}
       </div>
