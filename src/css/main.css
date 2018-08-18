@@ -27,7 +27,7 @@
 
 .schedule-pane {
   display: grid;
-  padding: 20px 20px 0 0;
+  padding: 20px 20px 20px 0;
   grid-auto-columns: 200px;
   grid-auto-rows: 120px;
   grid-gap: 15px 15px;
@@ -57,6 +57,17 @@
   display: flex;
   margin-top: 15px;
   margin-left: 40px;
+}
+
+@media screen and (max-width: 970px) {
+  .main-content__first-line {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 15px 37px 0 40px;
+    /*margin-top: 15px;*/
+    /*margin-left: 40px;*/
+  }
 }
 
 .main-section__header {
