@@ -89,11 +89,11 @@
     generateHouseItem(schedulePaneElement, action, 'big')
   })
 
-  var scenariosPaneElement = document.querySelector(
-    '#featured-scenarios > .scenarios-pane')
-  scenarios.forEach(function (item) {
-    generateHouseItem(scenariosPaneElement, item, 'medium')
-  })
+  // var scenariosPaneElement = document.querySelector(
+  //   '#featured-scenarios > .scenarios-pane')
+  // scenarios.forEach(function (item) {
+  //   generateHouseItem(scenariosPaneElement, item, 'medium')
+  // })
 
   var devicesPaneElement = document.querySelector(
     '#featured-devices > .devices-pane')
@@ -101,7 +101,10 @@
     generateHouseItem(devicesPaneElement, item, 'big')
   })
 
-  // Horizontal scroll with arrows on screen
+  // Vertical scroll on schedule pane
+  // TODO - your code
+
+  // Horizontal scroll with arrows on featured devices
   $('#featured-devices .arrow_direction_right').click(function () {
     event.preventDefault()
     $('#devices-pane').animate({
@@ -116,32 +119,77 @@
     }, 'slow')
   })
 
-  $('#featured-scenarios .scenarios-pane').resize(function () {
-    // event.preventDefault()
-    if ($('#featured-scenarios .scenarios-pane').width()) {
+  // Pagination
+  initScenariosLayout(scenarios)
 
+})()
+
+function initScenariosLayout (scenariosData) {
+  // constants in accordance with the layout
+
+  var scenariosPane = $('#featured-scenarios .scenarios-pane')
+  var tileWidth = 200
+  var hGap = 15
+  var rowCount = 3
+
+  var currentPage = 0
+  var tilesCount = calculateColumnCount(scenariosPane.width(), tileWidth,
+    hGap) * rowCount
+
+  fillScenariosPage(scenariosPane, currentPage, tilesCount, scenariosData)
+
+  $(window).resize(function () {
+    var newTilesCount = calculateColumnCount(scenariosPane.width(), tileWidth,
+      hGap) * rowCount
+    if (tilesCount !== newTilesCount) {
+      tilesCount = newTilesCount
+      fillScenariosPage(scenariosPane, currentPage, tilesCount, scenariosData)
     }
   })
-})()
+}
+
+function fillScenariosPage (
+  scenariosPane, pageNum, numberOfElements, scenarios) {
+  var scenariosPaneElement = scenariosPane.get(0)
+  scenariosPaneElement.innerHTML = ''
+  fillPageWithHouseItems(scenariosPaneElement, pageNum, numberOfElements,
+    scenarios)
+}
 
 // Template method for house device or action element
 function generateHouseItem (container, data, elementSize) {
-  var template = `<div class="house-item house-item_size_${elementSize}">
-                    <img class="house-item__icon"
-                         srcset="../assets/${data.icon}@1x.png 1x,
-                                 ../assets/${data.icon}@2x.png 2x"
-                         src="../assets/${data.icon}@1x.png"
-                         alt="${data.icon}">
-                    <div>
-                      <div class="house-item__name">${data.name}</div>
-                      ${data.description
-    ? '<div class="house-item__description">' + data.description + '</div>'
-    : ''}
-                    </div>
-                  </div>`
+  var template =
+    `<div class="house-item house-item_size_${elementSize}">
+      <img class="house-item__icon"
+           srcset="../assets/${data.icon}@1x.png 1x,
+                   ../assets/${data.icon}@2x.png 2x"
+           src="../assets/${data.icon}@1x.png"
+           alt="${data.icon}">
+       <div>
+        <div class="house-item__name">${data.name}</div>
+          ${data.description ?
+      '<div class="house-item__description">' +
+      data.description +
+      '</div>'
+      : ''}
+      </div>
+    </div>`
   var newHtmlElement = document.createElement('div')
   newHtmlElement.innerHTML = template
   container.appendChild(newHtmlElement)
 }
 
+function calculateColumnCount (blockWidth, columnWidth, columnGap) {
+  return Math.floor((blockWidth + columnGap) / (columnWidth + columnGap))
+}
 
+function fillPageWithHouseItems (
+  containerElement, pageNum, numberOfElements, data) {
+  var startElementNumber = pageNum * numberOfElements
+  var endElementNumber = startElementNumber + numberOfElements
+  for (var i = startElementNumber; i < endElementNumber; i++) {
+    if (data[i]) {
+      generateHouseItem(containerElement, data[i], 'medium')
+    }
+  }
+}
