@@ -40,12 +40,12 @@
 }
 
 #main {
-  margin-right: 23px;
+  margin-right: 26px;
 }
 
 #featured-scenarios {
   width: 100%;
-  margin-right: 37px;
+  margin-right: 40px;
 }
 
 #featured-devices {
@@ -59,23 +59,8 @@
   margin-left: 40px;
 }
 
-@media screen and (max-width: 970px) {
-  .main-content__first-line {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin: 15px 37px 0 40px;
-    /*margin-top: 15px;*/
-    /*margin-left: 40px;*/
-  }
-}
-
 .main-section__header {
   margin-bottom: 20px;
-}
-
-#featured-scenarios .main-section__header {
-  margin-bottom: 19px;
 }
 
 .main-section__header_margin_right {
@@ -94,6 +79,9 @@
   margin-right: 7px;
 }
 
+.pagination {
+}
+
 .info-pane {
   padding: 26px 0 0 25px;
 }
@@ -110,6 +98,13 @@
   color: #333333;
 }
 
+.scenarios-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .flex__justify_space-between {
   width: 100%;
   display: flex;
@@ -124,10 +119,7 @@
 }
 
 .scenarios-pane {
-  padding: 1px 3px 5px 3px;
-  overflow: hidden;
   display: grid;
-  max-height: 336px;
   grid-template-columns: repeat(auto-fill, 200px);
   grid-auto-rows: 100px;
   grid-gap: 15px 15px;
@@ -138,9 +130,49 @@
   position: relative;
   top: -1px;
   overflow: hidden;
-  padding: 1px 0 5px 37px;
+  padding: 1px 0 5px 40px;
   grid-auto-flow: column;
   grid-auto-columns: 200px;
   grid-auto-rows: 120px;
   grid-gap: 15px 15px;
+}
+
+@media screen and (max-width: 970px) {
+  .main-content__first-line {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0 0 0;
+    /*margin-top: 15px;*/
+    /*margin-left: 40px;*/
+  }
+
+  #main {
+    margin-left: 40px;
+    margin-right: 20px;
+  }
+
+  #featured-scenarios {
+    margin-right: 0;
+  }
+
+  .scenarios-pane {
+    display: grid;
+    position: relative;
+    top: -1px;
+    overflow: hidden;
+    padding: 1px 0 5px 40px;
+    grid-auto-flow: column;
+    grid-auto-columns: 200px;
+    grid-auto-rows: 120px;
+    grid-gap: 15px 15px;
+  }
+
+  .scenarios-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 40px;
+  }
 }
