@@ -41,4 +41,9 @@
   .whether-widget__temperature {
     font-size: 24px;
   }
+
+  .whether-widget__icon {
+    /* There are no image for small screens in the task repository */
+    width: 18px
+  }
 }
