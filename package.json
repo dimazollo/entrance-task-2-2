@@ -1,0 +1,26 @@
+{
+  "name": "entrance-task-2-2",
+  "version": "1.0.0",
+  "description": "В этом репозитории находится решение тестового задания по вёрстке для [14-й Школы разработки интерфейсов](https://academy.yandex.ru/events/frontend/shri_msk-2018-2) (осень 2018, Москва, Санкт-Петербург, Симферополь).",
+  "main": "src/js/app.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "author": "Dmitry Volovod",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^9.1.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "postcss-clean": "^1.1.0",
+    "postcss-loader": "^3.0.0",
+    "style-loader": "^0.22.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5",
+    "webpack-md5-hash": "0.0.6"
+  }
+}

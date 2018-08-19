@@ -1,7 +1,7 @@
-@import "whether-widget.css";
-@import "house-item.css";
-@import "pagination.css";
-@import "filter.css";
+@import "/src/css/whether-widget.css";
+@import "/src/css/house-item.css";
+@import "/src/css/pagination.css";
+@import "/src/css/filter.css";
 
 .main-content {
   flex: 1 0 auto;
@@ -13,10 +13,10 @@
   justify-content: space-between;
   width: 630px;
   height: 331px;
-  background-image: url("../assets/bg@1x.png");
+  background-image: url("/src/assets/bg@1x.png");
   background-image: -webkit-image-set(
-      url("../assets/bg@1x.png") 1x,
-      url("../assets/bg@2x.png") 2x
+      url("/src/assets/bg@1x.png") 1x,
+      url("/src/assets/bg@2x.png") 2x
   );
   background-repeat: no-repeat;
   background-position: 40% 50%;
@@ -197,10 +197,10 @@
     max-width: 630px;
     min-width: 285px;
 
-    background-image: url("../assets/bg@1x.png");
+    background-image: url("/src/assets/bg@1x.png");
     background-image: -webkit-image-set(
-        url("../assets/bg@1x.png") 1x,
-        url("../assets/bg@2x.png") 2x
+        url("/src/assets/bg@1x.png") 1x,
+        url("/src/assets/bg@2x.png") 2x
     );
     background-repeat: no-repeat;
     background-position: 40% 50%;

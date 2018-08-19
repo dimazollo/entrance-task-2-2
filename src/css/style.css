@@ -1,6 +1,6 @@
-@import "header.css";
-@import "main.css";
-@import "footer.css";
+@import "/src/css/header.css";
+@import "/src/css/main.css";
+@import "/src/css/footer.css";
 
 * {
   padding: 0;
@@ -28,6 +28,6 @@
   /*max-width: 1366px;*/
 }
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 576px) {
 
 }

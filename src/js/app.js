@@ -89,12 +89,6 @@
     generateHouseItem(schedulePaneElement, action, 'big')
   })
 
-  // var scenariosPaneElement = document.querySelector(
-  //   '#featured-scenarios > .scenarios-pane')
-  // scenarios.forEach(function (item) {
-  //   generateHouseItem(scenariosPaneElement, item, 'medium')
-  // })
-
   var devicesPaneElement = document.querySelector(
     '#featured-devices > .devices-pane')
   devices.forEach(function (item) {
@@ -187,9 +181,9 @@ function generateHouseItem (container, data, elementSize) {
   var template =
     `<div class="house-item house-item_size_${elementSize}">
       <img class="house-item__icon"
-           srcset="../assets/${data.icon}@1x.png 1x,
-                   ../assets/${data.icon}@2x.png 2x"
-           src="../assets/${data.icon}@1x.png">
+           srcset="/src/assets/${data.icon}@1x.png 1x,
+                   /src/assets/${data.icon}@2x.png 2x"
+           src="/src/assets/${data.icon}@1x.png">
        <div>
         <div class="house-item__name">${data.name}</div>
           ${data.description ?
