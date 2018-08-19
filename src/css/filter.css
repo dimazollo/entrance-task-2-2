@@ -57,7 +57,7 @@
 }
 
 .filter-menu-dropdown__button {
-  margin: 0 5px;
+  margin: 0;
   padding: 8px 15px;
   border-radius: 20px;
   background-color: #FFD93E;
@@ -73,6 +73,7 @@
   z-index: 100;
   background-color: #FFD93E;
   border-radius: 20px;
+  right: 10px;
 }
 
 .filter-menu-dropdown__button:hover {
