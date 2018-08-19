@@ -2,6 +2,7 @@
   flex: 0 0 auto;
   height: 64px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 0 36px 0 40px;
@@ -16,6 +17,9 @@
 }
 
 .footer-menu__menu-item {
+  line-height: 1.4em;
+  white-space: nowrap;
+  padding-right: 5px;
   text-decoration: none;
   color: #858585;
 }
@@ -26,7 +30,23 @@
 }
 
 .footer__copyright {
-  display: inline-block;
-  float: right;
+  white-space: nowrap;
   color: #858585;
+}
+
+@media screen and (max-width: 576px) {
+  .footer__footer-menu {
+    display: grid;
+    min-width: 375px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    width: 100%;
+    list-style-type: none;
+  }
+
+  .footer__copyright {
+    white-space: nowrap;
+    color: #858585;
+  }
 }
