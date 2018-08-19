@@ -189,8 +189,7 @@ function generateHouseItem (container, data, elementSize) {
       <img class="house-item__icon"
            srcset="../assets/${data.icon}@1x.png 1x,
                    ../assets/${data.icon}@2x.png 2x"
-           src="../assets/${data.icon}@1x.png"
-           alt="${data.icon}">
+           src="../assets/${data.icon}@1x.png">
        <div>
         <div class="house-item__name">${data.name}</div>
           ${data.description ?
@@ -210,9 +209,9 @@ function calculateColumnCount (blockWidth, columnWidth, columnGap) {
 }
 
 function fillPageWithHouseItems (
-  containerElement, pageNum, numberOfElements, data) {
-  var startElementNumber = pageNum * numberOfElements
-  var endElementNumber = startElementNumber + numberOfElements
+  containerElement, pageNumber, numberOfElementsOnPage, data) {
+  var startElementNumber = pageNumber * numberOfElementsOnPage
+  var endElementNumber = startElementNumber + numberOfElementsOnPage
   for (var i = startElementNumber; i < endElementNumber; i++) {
     if (data[i]) {
       generateHouseItem(containerElement, data[i], 'medium')
