@@ -8,10 +8,11 @@
   align-items: center;
   border-bottom: 1px solid #F0F0F0;
   background-color: #FFFFFF;
+  margin: 0 40px
 }
 
 .header__logo {
-  margin: 0 40px;
+
 }
 
 .header__header-menu {
@@ -42,4 +43,17 @@
 
 .header-menu__menu-item_active_false {
   opacity: 0.6;
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    height: 64px;
+    border-bottom: none;
+    justify-content: space-between;
+    margin: 0 20px;
+  }
+
+  .header__header-menu {
+    display: none;
+  }
 }
