@@ -50,7 +50,7 @@
     height: 64px;
     border-bottom: none;
     justify-content: space-between;
-    margin: 0 20px;
+    padding-left: 20px;
   }
 
   .header__header-menu {
