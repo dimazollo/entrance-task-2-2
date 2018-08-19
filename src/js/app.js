@@ -89,12 +89,6 @@
     generateHouseItem(schedulePaneElement, action, 'big')
   })
 
-  // var scenariosPaneElement = document.querySelector(
-  //   '#featured-scenarios > .scenarios-pane')
-  // scenarios.forEach(function (item) {
-  //   generateHouseItem(scenariosPaneElement, item, 'medium')
-  // })
-
   var devicesPaneElement = document.querySelector(
     '#featured-devices > .devices-pane')
   devices.forEach(function (item) {
@@ -117,6 +111,23 @@
     $('#devices-pane').animate({
       scrollLeft: '-=200px'
     }, 'slow')
+  })
+
+  // Open menu from hamburger icon
+  $('.header__menu-toggle').on('click', function() {
+    $('.header__header-menu').slideToggle(300, function(){
+      if( $(this).css('display') === "none"){
+        $(this).removeAttr('style');
+      }
+    });
+  });
+
+  // hide hamburger menu on resize to prevent bugs
+  $( window ).resize(function () {
+    var element = $('.header__header-menu')
+    if (element.attr('style')) {
+      element.removeAttr('style');
+    }
   })
 
   // Pagination

@@ -8,21 +8,31 @@
   <title>Яндекс Дом</title>
   <link rel="stylesheet" href="../css/app.css">
   <script src="../js/libs/jquery-3.3.1.js"></script>
-  <script src="../js/libs/cta.js"></script>
+  <!--<script src="../js/libs/cta.js"></script>-->
 </head>
 <body>
 <div class="wrapper">
   <header class="header">
-    <img class="header__logo"
+    <div class="header__logo">
+      <img
          srcset="../assets/Яндекс_Дом@1x.png 1x,
                  ../assets/Яндекс_Дом@2x.png 2x"
          src="../assets/Яндекс_Дом@1x.png"
          alt="Яндекс Дом">
-    <ul class="header__header-menu">
-      <li class="header-menu__menu-item header-menu__menu-item_active_true">Сводка</li>
-      <li class="header-menu__menu-item header-menu__menu-item_active_false">Устройства</li>
-      <li class="header-menu__menu-item header-menu__menu-item_active_false">Сценарии</li>
-    </ul>
+    </div>
+    <div class="header__menu-toggle">
+      <img srcset="../assets/icon_list_m@1x.png 1x,
+                   ../assets/icon_list_m@2x.png 2x"
+           src="../assets/icon_list_m@1x.png"
+           alt="Menu">
+    </div>
+    <nav>
+      <ul class="header__header-menu">
+        <li class="header-menu__menu-item header-menu__menu-item_active_true">Сводка</li>
+        <li class="header-menu__menu-item header-menu__menu-item_active_false">Устройства</li>
+        <li class="header-menu__menu-item header-menu__menu-item_active_false">Сценарии</li>
+      </ul>
+    </nav>
   </header>
 
   <main class="main-content">

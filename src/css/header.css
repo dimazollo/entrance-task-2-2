@@ -24,6 +24,11 @@
   color: #333333;
 }
 
+.header__menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
 .header-menu__menu-item {
   list-style-type: none;
   margin-right: 28px;
@@ -49,11 +54,39 @@
   .header {
     height: 64px;
     border-bottom: none;
-    justify-content: space-between;
     padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .header__logo {
+    margin-right: 54px;
+    flex: 1 0 auto;
   }
 
   .header__header-menu {
+    padding: 0;
+    margin: 0;
     display: none;
+    position: absolute;
+    background-color: #FFFFFF;
+    z-index: 100;
+    left: 0;
+    top: 64px;
+    width: 100%;
+  }
+
+  .header__header-menu:first-child {
+    border-top: 1px solid #F0F0F0;
+  }
+
+  .header-menu__menu-item {
+    padding: 15px 20px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #F0F0F0;
+  }
+
+  .header__menu-toggle {
+    display: inline-block;
   }
 }
