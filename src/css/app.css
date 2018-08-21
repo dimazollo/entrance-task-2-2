@@ -8,6 +8,11 @@
   border: 0;
 }
 
+ul {
+  -webkit-padding-start: 0;
+  -moz-padding-start: 0;
+}
+
 * {
   font-family: Arial, sans-serif;
 }

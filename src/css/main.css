@@ -72,10 +72,11 @@
   white-space: nowrap;
   font-size: 18px;
   color: #333333;
+  margin-right: 13px;
 }
 
 .section-header__name_margin_right {
-  margin-right: 7px;
+
 }
 
 .pagination {
