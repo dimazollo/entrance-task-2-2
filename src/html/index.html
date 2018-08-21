@@ -148,6 +148,37 @@
     </ul>
     <span class="footer__copyright">&copy;&thinsp;2001-2017 ООО &laquo;Яндекс&raquo;</span>
   </footer>
+
+  <div>
+    <div class="popup-container">
+      <div class="popup-container__content device-regulator">
+        <div class="device-regulator__name">Xiaomi Yeelight LED Smart Bulb</div>
+        <div class="device-regulator__status">Включится в 17:00</div>
+        <div class="icon">
+          <img src="../assets/icon_sun@2x.png" alt="sun">
+        </div>
+        <div class="device-regulator__menu">
+          <ul class="filter-menu-buttons">
+            <li class="filter-menu-buttons__item filter-menu-buttons__item_active_true">Вручную</li>
+            <li class="filter-menu-buttons__item filter-menu-buttons__item_active_false">Дневной свет</li>
+            <li class="filter-menu-buttons__item filter-menu-buttons__item_active_false">Вечерный свет</li>
+            <li class="filter-menu-buttons__item filter-menu-buttons__item_active_false">Рассвет</li>
+          </ul>
+        </div>
+        <div class="device-regulator__controls">
+          <input type="range" min="1" max="100" value="50" class="device-regulator__slider" id="popup-slider">
+
+        </div>
+        <div class="popup-container__controls">
+          <button class="button_highlighted_true">Применить</button>
+          <button class="button_highlighted_false">Закрыть</button>
+        </div>
+      </div>
+
+      <div class="home-temperature"></div>
+      <div class="home-floor"></div>
+    </div>
+  </div>
 </div>
 <script src="../js/app.js"></script>
 </body>
