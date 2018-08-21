@@ -1,6 +1,7 @@
 @import "header.css";
 @import "main.css";
 @import "footer.css";
+@import "popup.css";
 
 * {
   padding: 0;
@@ -28,4 +29,11 @@ ul {
   flex-direction: column;
   min-height: 100vh;
   min-width: 375px;
+}
+
+
+.blur {
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
 }
