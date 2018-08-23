@@ -114,24 +114,110 @@
   })
 
   // Open menu from hamburger icon
-  $('.header__menu-toggle').on('click', function() {
-    $('.header__header-menu').slideToggle(300, function(){
-      if( $(this).css('display') === "none"){
-        $(this).removeAttr('style');
+  $('.header__menu-toggle').on('click', function () {
+    $('.header__header-menu').slideToggle(300, function () {
+      if ($(this).css('display') === 'none') {
+        $(this).removeAttr('style')
       }
-    });
-  });
+    })
+  })
 
   // hide hamburger menu on resize to prevent bugs
-  $( window ).resize(function () {
+  $(window).resize(function () {
     var element = $('.header__header-menu')
     if (element.attr('style')) {
-      element.removeAttr('style');
+      element.removeAttr('style')
     }
   })
 
   // Pagination
   initScenariosLayout(scenarios)
+
+  //knob
+  $(function () {
+    $('.device-regulator__knob').knob({
+      min: 10,
+      max: 30,
+      angleArc: 290,
+      angleOffset: -145,
+      cursor: true,
+      fgColor: '#333333',
+      width: 250,
+      height: 250,
+
+      draw: function () {
+        this.cursorExt = 0.2
+        var a = this.arc(this.cv)  // Arc
+        var pa                   // Previous arc
+        var r = 1
+        this.g.lineWidth = this.lineWidth
+
+        // Border lines
+        this.g.lineWidth = 2
+        this.g.beginPath()
+        this.g.strokeStyle = this.o.fgColor
+
+        this.g.lineWidth = 1
+        this.g.strokeStyle = '#F5A623'
+        var step = this.PI2 / 138
+        var proportion = 0.81;
+        for (var angle = this.startAngle; angle < this.endAngle; angle += step) {
+          this.g.beginPath();
+          this.g.moveTo(this.xy + this.radius * proportion * Math.cos(angle),
+              this.xy + this.radius * proportion * Math.sin(angle));
+          this.g.lineTo(this.xy + this.radius * Math.cos(angle),
+              this.xy + this.radius * Math.sin(angle))
+
+          if (angle < (a.s + a.e) / 2) {
+            this.g.strokeStyle = '#F5A623'
+          } else {
+            this.g.strokeStyle = '#333333'
+          }
+          this.g.stroke()
+        }
+
+        // central circle with shadow
+        this.g.strokeStyle = '#FEFEFE'
+        this.g.fillStyle = '#FEFEFE'
+        this.g.shadowColor = 'rgba(134,121,71,0.45)'
+        this.g.shadowBlur = 4
+        this.g.shadowOffsetY = 2
+
+        this.g.beginPath()
+        this.g.arc(this.xy, this.xy, this.radius * proportion + 1, 0, 2 * Math.PI, false)
+        this.g.stroke()
+        this.g.fill()
+
+        // Cursor
+        this.g.fillStyle = '#333333'
+        this.g.strokeStyle = '#333333'
+        this.g.shadowColor = 'transparent'
+        this.g.lineWidth = 2
+
+        var headLen = 6
+        var headAngle = (a.s + a.e) / 2
+        var toX = this.xy + this.radius * proportion * Math.cos(headAngle)
+        var toY = this.xy + this.radius * proportion * Math.sin(headAngle)
+
+        this.g.beginPath()
+        this.g.strokeStyle = r ? this.o.fgColor : this.fgColor
+
+        this.g.moveTo(toX, toY)
+        this.g.lineTo(toX - headLen * Math.cos(headAngle - Math.PI / 4), toY - headLen * Math.sin(headAngle - Math.PI / 4))
+
+        // Path from the side point of the arrow, to the other side point
+        this.g.lineTo(toX - headLen * Math.cos(headAngle + Math.PI / 4), toY - headLen * Math.sin(headAngle + Math.PI / 4))
+
+        // Path from the side point back to the tip of the arrow, and then again to the opposite side point
+        this.g.lineTo(toX, toY)
+        this.g.lineTo(toX - headLen * Math.cos(headAngle - Math.PI / 4), toY - headLen * Math.sin(headAngle - Math.PI / 4))
+        this.g.stroke()
+        this.g.fill()
+
+        return false
+      }
+    })
+  })
 
 })()
 
@@ -162,23 +248,25 @@ function initScenariosLayout (scenariosData) {
     }
   })
 
-  $('#featured-scenarios .pagination__arrow.arrow_direction_left')
-      .click(function () {
-        if (currentPage > 0) {
-          currentPage--
-          scenariosPane.fadeOut(120, function () {
-            fillScenariosPage(scenariosPane, currentPage, tilesCount, scenariosData)
-            scenariosPane.fadeIn(120)
-          })
-        }
-      })
+  $('#featured-scenarios .pagination__arrow.arrow_direction_left').
+    click(function () {
+      if (currentPage > 0) {
+        currentPage--
+        scenariosPane.fadeOut(120, function () {
+          fillScenariosPage(scenariosPane, currentPage, tilesCount,
+            scenariosData)
+          scenariosPane.fadeIn(120)
+        })
+      }
+    })
 
-  $('#featured-scenarios .pagination__arrow.arrow_direction_right')
-    .click(function () {
+  $('#featured-scenarios .pagination__arrow.arrow_direction_right').
+    click(function () {
       if (scenariosData.length > tilesCount * (currentPage + 1)) {
         currentPage++
         scenariosPane.fadeOut(120, function () {
-          fillScenariosPage(scenariosPane, currentPage, tilesCount, scenariosData)
+          fillScenariosPage(scenariosPane, currentPage, tilesCount,
+            scenariosData)
           scenariosPane.fadeIn(120)
         })
       }
@@ -205,7 +293,7 @@ function generateHouseItem (container, data, elementSize) {
         <div class="house-item__name">${data.name}</div>
           ${data.description ?
       '<div class="house-item__description">' +
-        data.description +
+      data.description +
       '</div>'
       : ''}
       </div>

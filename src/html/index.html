@@ -8,7 +8,8 @@
   <title>Яндекс Дом</title>
   <link rel="stylesheet" href="../css/app.css">
   <script src="../js/libs/jquery-3.3.1.js"></script>
-  <!--<script src="../js/libs/cta.js"></script>-->
+  <script src="../js/libs/cta.min.js"></script>
+  <script src="../js/libs/jquery.knob.js"></script>
 </head>
 <body>
 <div>
@@ -176,6 +177,7 @@
         <div class="device-controller__controls">
           <input type="range" min="-10" max="30" value="20" class="device-regulator__slider device-regulator__slider_type_temperature" id="controls-slider-temperature">
           <input type="range" min="1" max="100" value="50" class="device-regulator__slider device-regulator__slider_type_light" id="controls-slider-light">
+          <input type="text" value="23" class="device-regulator__knob">
         </div>
       </div>
 
