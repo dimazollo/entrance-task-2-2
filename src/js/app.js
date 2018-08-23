@@ -146,21 +146,18 @@
       height: 250,
 
       draw: function () {
-        this.cursorExt = 0.2
         var a = this.arc(this.cv)  // Arc
-        var pa                   // Previous arc
         var r = 1
-        this.g.lineWidth = this.lineWidth
 
         // Border lines
-        this.g.lineWidth = 2
         this.g.beginPath()
         this.g.strokeStyle = this.o.fgColor
 
-        this.g.lineWidth = 1
+        this.g.lineWidth = 1 * this.scale
         this.g.strokeStyle = '#F5A623'
-        var step = this.PI2 / 138
-        var proportion = 0.81;
+        var numberOfDashes = 138 // Approximately
+        var step = this.PI2 / numberOfDashes
+        var proportion = 0.81;  // ratio of inner circle radius to outer circle
         for (var angle = this.startAngle; angle < this.endAngle; angle += step) {
           this.g.beginPath();
           this.g.moveTo(this.xy + this.radius * proportion * Math.cos(angle),
@@ -180,8 +177,8 @@
         this.g.strokeStyle = '#FEFEFE'
         this.g.fillStyle = '#FEFEFE'
         this.g.shadowColor = 'rgba(134,121,71,0.45)'
-        this.g.shadowBlur = 4
-        this.g.shadowOffsetY = 2
+        this.g.shadowBlur = 4 * this.scale
+        this.g.shadowOffsetY = 2 * this.scale
 
         this.g.beginPath()
         this.g.arc(this.xy, this.xy, this.radius * proportion + 1, 0, 2 * Math.PI, false)
@@ -192,9 +189,9 @@
         this.g.fillStyle = '#333333'
         this.g.strokeStyle = '#333333'
         this.g.shadowColor = 'transparent'
-        this.g.lineWidth = 2
+        this.g.lineWidth = 2 * this.scale
 
-        var headLen = 6
+        var headLen = 6 * this.scale
         var headAngle = (a.s + a.e) / 2
         var toX = this.xy + this.radius * proportion * Math.cos(headAngle)
         var toY = this.xy + this.radius * proportion * Math.sin(headAngle)
