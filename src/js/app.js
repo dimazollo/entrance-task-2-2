@@ -105,12 +105,21 @@
 
   var devicesPaneElement = document.querySelector(
       '#featured-devices > .devices-pane')
+  var popupContainer = document.querySelector('.popup-container')
+
   devices.forEach(function (item) {
-    generateHouseItem(devicesPaneElement, item, 'big')
+    var domElem = generateHouseItem(devicesPaneElement, item, 'big')
+    domElem.addEventListener('click', function () {
+
+    })
   })
 
   // Vertical scroll on schedule pane
-  // TODO - your code
+  updateDoubleArrowsInScheduleTiles()
+  $('.schedule-pane').scroll(function () {
+    updateDoubleArrowsInScheduleTiles()
+  })
+  $(window).resize(updateDoubleArrowsInScheduleTiles ())
 
   // Horizontal scroll with arrows on featured devices
   $('#featured-devices .arrow_direction_right').click(function () {
@@ -329,17 +338,31 @@ function fillScenariosPage (
 function generateHouseItem (container, data, elementSize) {
   var template =
     `<div class="house-item house-item_size_${elementSize}">
-      <img class="house-item__icon"
-           srcset="../assets/${data.icon}@1x.png 1x,
-                   ../assets/${data.icon}@2x.png 2x"
-           src="../assets/${data.icon}@1x.png">
-      <div>
-        <div class="house-item__name">${data.name}</div>
-          ${data.description ?
-        '<div class="house-item__description">' +
-          data.description +
-        '</div>'
-        : ''}
+      <div class="house-item__main-container">
+        <img class="house-item__icon"
+             srcset="../assets/${data.icon}@1x.png 1x,
+                     ../assets/${data.icon}@2x.png 2x"
+             src="../assets/${data.icon}@1x.png">
+        <div>
+          <div class="house-item__name">${data.name}</div>
+            ${data.description ?
+          '<div class="house-item__description">' +
+            data.description +
+          '</div>'
+          : ''}
+        </div>
+      </div>
+      <div class="house-item__arrows-container">
+        <div class="arrows-container__double-arrow_direction_up">
+          <img srcset="../assets/Icons_/Arrow_Double_/M.png 1x,
+                       ../assets/Icons_/Arrow_Double_/M@2x.png 2x"
+               src="../assets/Icons_/Arrow_Double_/M.png">
+        </div>
+        <div class="arrows-container__double-arrow_direction_down">
+          <img srcset="../assets/Icons_/Arrow_Double_/M.png 1x,
+                       ../assets/Icons_/Arrow_Double_/M@2x.png 2x"
+               src="../assets/Icons_/Arrow_Double_/M.png">
+        </div>
       </div>
     </div>`
   var newHtmlElement = document.createElement('div')
@@ -363,7 +386,7 @@ function fillPageWithHouseItems (
   }
 }
 
-function generateDeviceControl(container, data) {
+function generateDeviceControl (container, data) {
   var template = `
     <div class="popup-container__content device-controller">
       <div class="popup-container__header popup-header">
@@ -421,6 +444,10 @@ function generateDeviceControl(container, data) {
   container.insertBefore(newHtmlElement, container.firstChild)
 }
 
+function closePopupWindow (container) {
+  container.remove(container.firstChild);
+}
+
 function updateScrollButtonsForFeaturedDevices () {
   var element = document.querySelector('.devices-pane')
   if (element.scrollWidth > element.offsetWidth) {
@@ -428,4 +455,22 @@ function updateScrollButtonsForFeaturedDevices () {
   } else {
     $('#featured-devices .pagination').hide(100)
   }
+}
+
+function updateDoubleArrowsInScheduleTiles () {
+  $('.schedule-pane .house-item').each(function () {
+    var tileCenter = this.offsetTop + this.offsetHeight / 2
+    var parentContainer = $('.schedule-pane')
+    var element = this
+    if (tileCenter > parentContainer.scrollTop() + 331
+        || tileCenter < parentContainer.scrollTop()) {
+
+      $(this).find('> .house-item__main-container').css('display', 'none')
+      $(this).find('> .house-item__arrows-container').css('display', 'flex')
+
+    } else {
+      $(this).find('> .house-item__arrows-container').css('display', 'none')
+      $(this).find('> .house-item__main-container').css('display', 'flex')
+    }
+  })
 }
