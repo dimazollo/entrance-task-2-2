@@ -135,7 +135,7 @@
 
   // Circular regulator
   $(function () {
-    $('.device-regulator__knob').knob({
+    $('.controls__knob').knob({
       min: 10,
       max: 30,
       thickness: 0.01,
