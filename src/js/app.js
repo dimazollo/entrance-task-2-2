@@ -152,16 +152,14 @@
   })
 
   // render custom scroll buttons on overflow
-  // Featured Devices
   updateScrollButtonsForFeaturedDevices()
+  updateScrollButtonsForFeaturedScenarios()
   $(window).resize(function () {
     updateScrollButtonsForFeaturedDevices()
+    updateScrollButtonsForFeaturedScenarios()
   })
 
   // Featured Scenarios
-
-
-  // Pagination
   initScenariosLayout(scenarios)
 
   // Circular regulator
@@ -192,7 +190,7 @@
         var a = this.arc(this.cv)  // Arc
         var r = 1
 
-        // Border lines
+        // Outer radial dashes
         this.g.beginPath()
         this.g.strokeStyle = this.o.fgColor
 
@@ -216,7 +214,7 @@
           this.g.stroke()
         }
 
-        // central circle with shadow
+        // Central circle with shadow
         this.g.strokeStyle = '#FEFEFE'
         this.g.fillStyle = '#FEFEFE'
         this.g.shadowColor = 'rgba(134,121,71,0.45)'
@@ -371,21 +369,7 @@ function generateHouseItem (container, data, elementSize) {
   return newHtmlElement
 }
 
-function calculateColumnCount (blockWidth, columnWidth, columnGap) {
-  return Math.floor((blockWidth + columnGap) / (columnWidth + columnGap))
-}
-
-function fillPageWithHouseItems (
-  containerElement, pageNumber, numberOfElementsOnPage, data) {
-  var startElementNumber = pageNumber * numberOfElementsOnPage
-  var endElementNumber = startElementNumber + numberOfElementsOnPage
-  for (var i = startElementNumber; i < endElementNumber; i++) {
-    if (data[i]) {
-      generateHouseItem(containerElement, data[i], 'medium')
-    }
-  }
-}
-
+// Template method for popup device control menu
 function generateDeviceControl (container, data) {
   var template = `
     <div class="popup-container__content device-controller">
@@ -403,35 +387,35 @@ function generateDeviceControl (container, data) {
         </div>
       </div>
       ${data.control === 'slider-light' ?
-        '<div class="device-controller__menu">' + 
-          '<ul class="mode-menu">' +
-            '<li class="mode-menu__button mode-menu__button_highlighted">Вручную</li>' +
-            '<li class="mode-menu__button">Дневной свет</li>' +
-            '<li class="mode-menu__button">Вечерный свет</li>' +
-            '<li class="mode-menu__button">Рассвет</li>' +
-          '</ul>' +
-        '</div>' : '' }
+          '<div class="device-controller__menu">' +
+            '<ul class="mode-menu">' +
+              '<li class="mode-menu__button mode-menu__button_highlighted">Вручную</li>' +
+              '<li class="mode-menu__button">Дневной свет</li>' +
+              '<li class="mode-menu__button">Вечерный свет</li>' +
+              '<li class="mode-menu__button">Рассвет</li>' +
+            '</ul>' +
+          '</div>' : '' }
       ${data.control === 'slider-light' ?
-        '<div class="device-controller__menu">' +
-          '<ul class="mode-menu">' +
-            '<li class="mode-menu__button mode-menu__button_highlighted">Вручную</li>' +
-            '<li class="mode-menu__button">Холодно</li>' +
-            '<li class="mode-menu__button">Тепло</li>' +
-            '<li class="mode-menu__button">Жарко</li>' +
-          '</ul>' +
-        '</div>' : '' }
+          '<div class="device-controller__menu">' +
+            '<ul class="mode-menu">' +
+              '<li class="mode-menu__button mode-menu__button_highlighted">Вручную</li>' +
+              '<li class="mode-menu__button">Холодно</li>' +
+              '<li class="mode-menu__button">Тепло</li>' +
+              '<li class="mode-menu__button">Жарко</li>' +
+            '</ul>' +
+          '</div>' : '' }
       <div class="device-controller__controls">
           ${data.control === 'knob' ?
-            '<div><input type="text" value="' +
+              '<div><input type="text" value="' +
                 data.currentValue + '" ' +
                 'class="controls__knob"></div>': ''}
-          ${data.control === 'slider-temperature' ? 
-            '<input type="range" min="-10" max="30" value="' +
-                data.currentValue + 
+          ${data.control === 'slider-temperature' ?
+              '<input type="range" min="-10" max="30" value="' +
+                data.currentValue +
                 '" class="controls__slider ' +
                 'controls__slider_type_temperature">' : ''}
           ${data.control === 'slider-light' ?
-            '<input type="range" min="1" max="100" value="' +
+              '<input type="range" min="1" max="100" value="' +
                 data.currentValue + '" ' +
                 'class="controls__slider ' +
                 'controls__slider_type_light">' : ''}
@@ -444,8 +428,32 @@ function generateDeviceControl (container, data) {
   container.insertBefore(newHtmlElement, container.firstChild)
 }
 
+function calculateColumnCount (blockWidth, columnWidth, columnGap) {
+  return Math.floor((blockWidth + columnGap) / (columnWidth + columnGap))
+}
+
+function fillPageWithHouseItems (
+  containerElement, pageNumber, numberOfElementsOnPage, data) {
+  var startElementNumber = pageNumber * numberOfElementsOnPage
+  var endElementNumber = startElementNumber + numberOfElementsOnPage
+  for (var i = startElementNumber; i < endElementNumber; i++) {
+    if (data[i]) {
+      generateHouseItem(containerElement, data[i], 'medium')
+    }
+  }
+}
+
 function closePopupWindow (container) {
   container.remove(container.firstChild);
+}
+
+function updateScrollButtonsForFeaturedScenarios () {
+  var element = document.querySelector('.scenarios-pane')
+  if (element.scrollWidth > element.offsetWidth && window.innerWidth <= 970) {
+    $('#featured-scenarios .pagination').show(100)
+  } else {
+    $('#featured-scenarios .pagination').hide(100)
+  }
 }
 
 function updateScrollButtonsForFeaturedDevices () {
