@@ -133,7 +133,7 @@
   // Pagination
   initScenariosLayout(scenarios)
 
-  //knob
+  // Circular regulator
   $(function () {
     $('.device-regulator__knob').knob({
       min: 10,
@@ -142,8 +142,19 @@
       angleOffset: -145,
       cursor: true,
       fgColor: '#333333',
-      width: 250,
-      height: 250,
+      width: 221,
+      height: 221,
+
+      // Add plus or minus sign to the value of circular regulator
+      format: function(v) {
+        if (v > 0) {
+          return '+' + v
+        } else if (v === 0) {
+          return v
+        } else if (v < 0) {
+          return '-' + v
+        }
+      },
 
       draw: function () {
         var a = this.arc(this.cv)  // Arc
