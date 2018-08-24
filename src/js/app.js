@@ -128,6 +128,16 @@
     }
   })
 
+  // render custom scroll buttons on overflow
+  // Featured Devices
+  updateScrollButtonsForFeaturedDevices()
+  $(window).resize(function () {
+    updateScrollButtonsForFeaturedDevices()
+  })
+
+  // Featured Scenarios
+
+
   // Pagination
   initScenariosLayout(scenarios)
 
