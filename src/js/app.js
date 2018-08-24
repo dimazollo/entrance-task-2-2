@@ -90,7 +90,7 @@
   })
 
   var devicesPaneElement = document.querySelector(
-    '#featured-devices > .devices-pane')
+      '#featured-devices > .devices-pane')
   devices.forEach(function (item) {
     generateHouseItem(devicesPaneElement, item, 'big')
   })
@@ -156,7 +156,7 @@
           return '-' + v
         }
       },
-
+      // Override draw
       draw: function () {
         var a = this.arc(this.cv)  // Arc
         var r = 1
@@ -257,29 +257,29 @@ function initScenariosLayout (scenariosData) {
     }
   })
 
-  $('#featured-scenarios .pagination__arrow.arrow_direction_left').
-    click(function () {
-      if (currentPage > 0) {
-        currentPage--
-        scenariosPane.fadeOut(120, function () {
-          fillScenariosPage(scenariosPane, currentPage, tilesCount,
-            scenariosData)
-          scenariosPane.fadeIn(120)
-        })
-      }
-    })
+  $('#featured-scenarios .pagination__arrow.arrow_direction_left')
+      .click(function () {
+        if (currentPage > 0) {
+          currentPage--
+          scenariosPane.fadeOut(120, function () {
+            fillScenariosPage(scenariosPane, currentPage, tilesCount,
+              scenariosData)
+            scenariosPane.fadeIn(120)
+          })
+        }
+      })
 
-  $('#featured-scenarios .pagination__arrow.arrow_direction_right').
-    click(function () {
-      if (scenariosData.length > tilesCount * (currentPage + 1)) {
-        currentPage++
-        scenariosPane.fadeOut(120, function () {
-          fillScenariosPage(scenariosPane, currentPage, tilesCount,
-            scenariosData)
-          scenariosPane.fadeIn(120)
-        })
-      }
-    })
+  $('#featured-scenarios .pagination__arrow.arrow_direction_right')
+      .click(function () {
+        if (scenariosData.length > tilesCount * (currentPage + 1)) {
+          currentPage++
+          scenariosPane.fadeOut(120, function () {
+            fillScenariosPage(scenariosPane, currentPage, tilesCount,
+              scenariosData)
+            scenariosPane.fadeIn(120)
+          })
+        }
+      })
 }
 
 function fillScenariosPage (
