@@ -152,11 +152,10 @@
   })
 
   // render custom scroll buttons on overflow
+  // Featured Devices
   updateScrollButtonsForFeaturedDevices()
-  updateScrollButtonsForFeaturedScenarios()
   $(window).resize(function () {
     updateScrollButtonsForFeaturedDevices()
-    updateScrollButtonsForFeaturedScenarios()
   })
 
   // Featured Scenarios
@@ -268,15 +267,16 @@ function initScenariosLayout (scenariosData) {
 
   var currentPage = 0
   var tilesCount = calculateColumnCount(scenariosPane.width(), tileWidth,
-    hGap) * rowCount
+      hGap) * rowCount
 
   var minWidthForPaging = 970
 
   fillScenariosPage(scenariosPane, currentPage, tilesCount, scenariosData)
+  updateScrollButtonsForFeaturedScenarios(scenariosData, tilesCount)
 
   $(window).resize(function () {
     var newTilesCount = calculateColumnCount(
-      scenariosPane.width(), tileWidth, hGap) * rowCount
+        scenariosPane.width(), tileWidth, hGap) * rowCount
 
     if (tilesCount !== newTilesCount) {
       tilesCount = newTilesCount
@@ -285,6 +285,7 @@ function initScenariosLayout (scenariosData) {
       }
       fillScenariosPage(scenariosPane, currentPage, tilesCount, scenariosData)
     }
+    updateScrollButtonsForFeaturedScenarios(scenariosData, tilesCount)
   })
 
   $('#featured-scenarios .pagination__arrow.arrow_direction_left')
@@ -327,9 +328,11 @@ function initScenariosLayout (scenariosData) {
 function fillScenariosPage (
   scenariosPane, pageNum, numberOfElements, scenarios) {
   var scenariosPaneElement = scenariosPane.get(0)
-  scenariosPaneElement.innerHTML = ''
-  fillPageWithHouseItems(scenariosPaneElement, pageNum, numberOfElements,
-    scenarios)
+  while (scenariosPaneElement.firstChild) {
+    scenariosPaneElement.removeChild(scenariosPaneElement.firstChild);
+  }
+  fillPageWithHouseItems(scenariosPaneElement,
+      pageNum, numberOfElements, scenarios)
 }
 
 // Template method for house device or action element
@@ -432,8 +435,8 @@ function calculateColumnCount (blockWidth, columnWidth, columnGap) {
   return Math.floor((blockWidth + columnGap) / (columnWidth + columnGap))
 }
 
-function fillPageWithHouseItems (
-  containerElement, pageNumber, numberOfElementsOnPage, data) {
+function fillPageWithHouseItems (containerElement, pageNumber,
+      numberOfElementsOnPage, data) {
   var startElementNumber = pageNumber * numberOfElementsOnPage
   var endElementNumber = startElementNumber + numberOfElementsOnPage
   for (var i = startElementNumber; i < endElementNumber; i++) {
@@ -447,9 +450,10 @@ function closePopupWindow (container) {
   container.remove(container.firstChild);
 }
 
-function updateScrollButtonsForFeaturedScenarios () {
+function updateScrollButtonsForFeaturedScenarios (scenariosData, tilesCount) {
   var element = document.querySelector('.scenarios-pane')
-  if (element.scrollWidth > element.offsetWidth && window.innerWidth <= 970) {
+  if (element.scrollWidth > element.offsetWidth && window.innerWidth <= 970
+      || (scenariosData.length > tilesCount && window.innerWidth > 970)) {
     $('#featured-scenarios .pagination').show(100)
   } else {
     $('#featured-scenarios .pagination').hide(100)
