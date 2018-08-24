@@ -100,14 +100,12 @@
 
   // Horizontal scroll with arrows on featured devices
   $('#featured-devices .arrow_direction_right').click(function () {
-    event.preventDefault()
     $('#devices-pane').animate({
       scrollLeft: '+=200px'
     }, 'slow')
   })
 
   $('#featured-devices .arrow_direction_left').click(function () {
-    event.preventDefault()
     $('#devices-pane').animate({
       scrollLeft: '-=200px'
     }, 'slow')
@@ -242,6 +240,8 @@ function initScenariosLayout (scenariosData) {
   var tilesCount = calculateColumnCount(scenariosPane.width(), tileWidth,
     hGap) * rowCount
 
+  var minWidthForPaging = 970
+
   fillScenariosPage(scenariosPane, currentPage, tilesCount, scenariosData)
 
   $(window).resize(function () {
@@ -259,25 +259,37 @@ function initScenariosLayout (scenariosData) {
 
   $('#featured-scenarios .pagination__arrow.arrow_direction_left')
       .click(function () {
-        if (currentPage > 0) {
-          currentPage--
-          scenariosPane.fadeOut(120, function () {
-            fillScenariosPage(scenariosPane, currentPage, tilesCount,
-              scenariosData)
-            scenariosPane.fadeIn(120)
-          })
+        if (window.innerWidth > minWidthForPaging) {
+          if (currentPage > 0) {
+            currentPage--
+            scenariosPane.fadeOut(120, function () {
+              fillScenariosPage(scenariosPane, currentPage, tilesCount,
+                scenariosData)
+              scenariosPane.fadeIn(120)
+            })
+          }
+        } else {
+          scenariosPane.animate({
+            scrollLeft: '-=200px'
+          }, 'slow')
         }
       })
 
   $('#featured-scenarios .pagination__arrow.arrow_direction_right')
       .click(function () {
-        if (scenariosData.length > tilesCount * (currentPage + 1)) {
-          currentPage++
-          scenariosPane.fadeOut(120, function () {
-            fillScenariosPage(scenariosPane, currentPage, tilesCount,
-              scenariosData)
-            scenariosPane.fadeIn(120)
-          })
+        if (window.innerWidth > minWidthForPaging) {
+          if (scenariosData.length > tilesCount * (currentPage + 1)) {
+            currentPage++
+            scenariosPane.fadeOut(120, function () {
+              fillScenariosPage(scenariosPane, currentPage, tilesCount,
+                scenariosData)
+              scenariosPane.fadeIn(120)
+            })
+          }
+        } else {
+          scenariosPane.animate({
+            scrollLeft: '+=200px'
+          }, 'slow')
         }
       })
 }
