@@ -138,6 +138,7 @@
     $('.device-regulator__knob').knob({
       min: 10,
       max: 30,
+      thickness: 0.01,
       angleArc: 290,
       angleOffset: -145,
       cursor: true,
