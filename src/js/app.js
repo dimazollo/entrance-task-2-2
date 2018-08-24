@@ -225,7 +225,6 @@
       }
     })
   })
-
 })()
 
 function initScenariosLayout (scenariosData) {
@@ -310,18 +309,19 @@ function generateHouseItem (container, data, elementSize) {
            srcset="../assets/${data.icon}@1x.png 1x,
                    ../assets/${data.icon}@2x.png 2x"
            src="../assets/${data.icon}@1x.png">
-       <div>
+      <div>
         <div class="house-item__name">${data.name}</div>
           ${data.description ?
-      '<div class="house-item__description">' +
-      data.description +
-      '</div>'
-      : ''}
+        '<div class="house-item__description">' +
+          data.description +
+        '</div>'
+        : ''}
       </div>
     </div>`
   var newHtmlElement = document.createElement('div')
   newHtmlElement.innerHTML = template
   container.appendChild(newHtmlElement)
+  return newHtmlElement
 }
 
 function calculateColumnCount (blockWidth, columnWidth, columnGap) {
