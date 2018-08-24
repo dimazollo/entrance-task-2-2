@@ -48,9 +48,26 @@
 
   var devices = [
     {
+      icon: 'icon_temperature_2',  // Pattern name is {icon_name}@{icon_scale}.{icon_type}
+                              // Scale and type are specified in template
+      name: 'Xiaomi Warm Floor',
+      description: 'Включено',
+      currentValue: '23',     // Some init value for regulator
+      control: 'knob',  // Could be 'knob', 'slider-temperature', 'slider-light'
+    },
+    {
       icon: 'icon_sun_2',
       name: 'Xiaomi Yeelight LED',
-      description: 'Включено'
+      description: 'Включено',
+      currentValue: '60',
+      control: 'slider-light'
+    },
+    {
+      icon: 'icon_temperature',
+      name: 'Elgato Eve Degree Connected',
+      description: 'Выключено до 17:00',
+      currentValue: '15',
+      control: 'slider-temperature',
     },
     {
       icon: 'icon_sun',
@@ -58,14 +75,11 @@
       description: 'Включится в 17:00'
     },
     {
-      icon: 'icon_temperature',
-      name: 'Elgato Eve Degree Connected',
-      description: 'Выключено до 17:00'
-    },
-    {
       icon: 'icon_sun',
       name: 'LIFX Mini Day & Dusk A60 E27',
-      description: 'Включится в 17:00'
+      description: 'Включится в 17:00',
+      currentValue: '60',
+      control: 'slider-light'
     },
     {
       icon: 'icon_sun_2',
