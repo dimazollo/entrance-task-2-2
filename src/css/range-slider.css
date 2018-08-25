@@ -71,7 +71,7 @@ input[type=range]:focus {
 }
 
 .controls__slider_type_temperature::before {
-  content: "-10";
+  content: "–10";
   font-weight: bold;
   color: #FFFFFF;
   font-size: 18px;
@@ -110,4 +110,35 @@ input[type=range]:focus {
   position: absolute;
   right: 15px;
   top: 12px;
+}
+
+@media screen and (max-width: 710px) {
+  .controls__slider {
+    transform: rotate(-90deg);
+    height: 334px;
+  }
+
+  .controls__slider_type_light::before {
+    left: 15px;
+    top: 149px;
+  }
+
+  .controls__slider_type_light::after {
+    right: 15px;
+    top: 149px;
+  }
+
+  .controls__slider_type_temperature::before {
+    transform: rotate(90deg);
+    left: 15px;
+    top: 156px;
+  }
+
+  .controls__slider_type_temperature::after {
+    transform: rotate(90deg);
+    right: 15px;
+    top: 156px;
+  }
+
+
 }

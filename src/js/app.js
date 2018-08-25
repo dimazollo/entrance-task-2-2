@@ -124,7 +124,7 @@
     })
   })
 
-  var dialogButtons = document.querySelectorAll('.popup-controls__button')
+  var dialogButtons = document.querySelectorAll('.popup-dialog__button')
   dialogButtons.forEach(function (button) {
     button.addEventListener('click', function () {
       popupContainer.classList.add('transparent')

@@ -57,6 +57,7 @@
 }
 
 .text-description__name {
+  color: #333333;
   font-weight: bold;
   font-size: 27px;
 }
@@ -67,15 +68,15 @@
   line-height: 1.5em;
 }
 
-.popup-controls {
-  height: 60px;
+.popup-dialog {
   display: grid;
   grid-template-rows: 60px;
-  grid-template-columns: 307px 307px;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
 }
 
-.popup-controls__button {
+.popup-dialog__button {
+  color: #333333;
   font-weight: bold;
   font-size: 18px;
   border-radius: 20px;
@@ -83,15 +84,16 @@
   background-color: #FFFFFF;
 }
 
-.popup-controls__button:hover {
+.popup-dialog__button:hover {
   font-weight: bold;
   font-size: 18px;
   border-radius: 20px;
   background-color: #FFCD00;
 }
 
-.popup-controls__button_highlighted {
+.popup-dialog__button_highlighted {
   background-color: #FFD93E;
+  color: #000000;
 }
 
 .device-controller__menu {
@@ -117,6 +119,7 @@
 }
 
 .mode-menu__button {
+  white-space: nowrap;
   margin-right: 10px;
   padding: 8px 15px;
   border-radius: 20px;
@@ -132,4 +135,48 @@
 
 .mode-menu__button_highlighted {
   background-color: #FFD93E;
+}
+
+@media screen and (max-width: 710px) {
+  .text-description__name {
+    font-size: 18px;
+  }
+
+  .text-description__info {
+    font-size: 12px;
+  }
+
+  .mode-menu {
+    overflow: scroll;
+    padding-left: 20px;
+  }
+
+  .mode-menu__button {
+    font-weight: normal;
+  }
+
+  .popup-container__header {
+    padding: 20px 20px 0 20px;
+  }
+
+  .popup-container__content {
+    width: 334px;
+    padding: 0 0 15px 0;
+    margin-bottom: 15px;
+  }
+
+  .device-status {
+    display: none;
+  }
+
+  .device-controller__controls {
+    padding: 0 20px;
+  }
+
+  .popup-dialog {
+    display: grid;
+    grid-template-rows: 60px 60px;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+  }
 }
