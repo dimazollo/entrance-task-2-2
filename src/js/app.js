@@ -316,9 +316,10 @@ function generateDeviceControl (container, data) {
           <div class="text-description__info">${data.description}</div>
         </div>
         <div class="popup-header__status device-status">
-          <div class="device-status__current-value">
-            ${data.currentValue}
-          </div>
+          ${data.control === 'knob' || data.control === 'slider-temperature' ?
+              '<div class="device-status__current-value">' +
+                data.currentValue +
+              '</div>' : '' }
           <img class="device-status__icon" 
                src="../assets/${data.icon}@2x.png">
         </div>
