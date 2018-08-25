@@ -98,30 +98,56 @@
   ]
 
   // Init
+  // Scheduled actions in main section
   var schedulePaneElement = document.querySelector('#main .schedule-pane')
   scheduledActions.forEach(function (action) {
     generateHouseItem(schedulePaneElement, action, 'big')
   })
 
+  // Devices tiles in featured devices section
   var devicesPaneElement = document.querySelector(
       '#featured-devices > .devices-pane')
   var popupContainer = document.querySelector('.popup-container')
+  var popupWrapper = document.querySelector('.popup-container-wrapper')
+  var contentWrapper = document.querySelector('.wrapper')
 
   devices.forEach(function (item) {
-    var domElem = generateHouseItem(devicesPaneElement, item, 'big')
-    domElem.addEventListener('click', function () {
+    var deviceTile = generateHouseItem(devicesPaneElement, item, 'big')
+    deviceTile.firstChild.addEventListener('click', function () {
 
+      generateDeviceControl(popupContainer, item)
+
+      popupContainer.classList.remove('transparent')
+      popupWrapper.classList.remove('hidden')
+      popupWrapper.classList.add('muted-background')
+      contentWrapper.classList.add('blur')
     })
   })
 
-  // Vertical scroll on schedule pane
+  var dialogButtons = document.querySelectorAll('.popup-controls__button')
+  dialogButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      popupContainer.classList.add('transparent')
+
+      popupWrapper.classList.remove('muted-background')
+      contentWrapper.classList.remove('blur')
+
+      var hidePopupAnimationDuration = 500 // ms
+      setTimeout(function () {
+        popupContainer.removeChild(popupContainer.firstChild);
+        popupWrapper.classList.add('hidden')
+      }, hidePopupAnimationDuration)
+    })
+  })
+
+  // Vertical scroll in schedule pane
   updateDoubleArrowsInScheduleTiles()
   $('.schedule-pane').scroll(function () {
     updateDoubleArrowsInScheduleTiles()
   })
   $(window).resize(updateDoubleArrowsInScheduleTiles ())
 
-  // Horizontal scroll with arrows on featured devices
+  // Horizontal scroll with arrows in featured devices
   $('#featured-devices .arrow_direction_right').click(function () {
     $('#devices-pane').animate({
       scrollLeft: '+=200px'
@@ -143,10 +169,11 @@
     })
   })
 
-  // hide hamburger menu on resize to prevent bugs
+  // hide dropdown menu from hamburger on resize to prevent bugs
   $(window).resize(function () {
     var element = $('.header__header-menu')
     if (element.attr('style')) {
+      // remove JQuery generated styles
       element.removeAttr('style')
     }
   })
@@ -162,99 +189,6 @@
   initScenariosLayout(scenarios)
 
   // Circular regulator
-  $(function () {
-    $('.controls__knob').knob({
-      min: 10,
-      max: 30,
-      thickness: 0.01,
-      angleArc: 290,
-      angleOffset: -145,
-      cursor: true,
-      fgColor: '#333333',
-      width: 221,
-      height: 221,
-
-      // Add plus or minus sign to the value of circular regulator
-      format: function(v) {
-        if (v > 0) {
-          return '+' + v
-        } else if (v === 0) {
-          return v
-        } else if (v < 0) {
-          return '-' + v
-        }
-      },
-      // Override draw
-      draw: function () {
-        var a = this.arc(this.cv)  // Arc
-        var r = 1
-
-        // Outer radial dashes
-        this.g.beginPath()
-        this.g.strokeStyle = this.o.fgColor
-
-        this.g.lineWidth = 1 * this.scale
-        this.g.strokeStyle = '#F5A623'
-        var numberOfDashes = 138 // Approximately
-        var step = this.PI2 / numberOfDashes
-        var proportion = 0.81;  // ratio of inner circle radius to outer circle
-        for (var angle = this.startAngle; angle < this.endAngle; angle += step) {
-          this.g.beginPath();
-          this.g.moveTo(this.xy + this.radius * proportion * Math.cos(angle),
-              this.xy + this.radius * proportion * Math.sin(angle));
-          this.g.lineTo(this.xy + this.radius * Math.cos(angle),
-              this.xy + this.radius * Math.sin(angle))
-
-          if (angle < (a.s + a.e) / 2) {
-            this.g.strokeStyle = '#F5A623'
-          } else {
-            this.g.strokeStyle = '#333333'
-          }
-          this.g.stroke()
-        }
-
-        // Central circle with shadow
-        this.g.strokeStyle = '#FEFEFE'
-        this.g.fillStyle = '#FEFEFE'
-        this.g.shadowColor = 'rgba(134,121,71,0.45)'
-        this.g.shadowBlur = 4 * this.scale
-        this.g.shadowOffsetY = 2 * this.scale
-
-        this.g.beginPath()
-        this.g.arc(this.xy, this.xy, this.radius * proportion + 1, 0, 2 * Math.PI, false)
-        this.g.stroke()
-        this.g.fill()
-
-        // Cursor
-        this.g.fillStyle = '#333333'
-        this.g.strokeStyle = '#333333'
-        this.g.shadowColor = 'transparent'
-        this.g.lineWidth = 2 * this.scale
-
-        var headLen = 6 * this.scale
-        var headAngle = (a.s + a.e) / 2
-        var toX = this.xy + this.radius * proportion * Math.cos(headAngle)
-        var toY = this.xy + this.radius * proportion * Math.sin(headAngle)
-
-        this.g.beginPath()
-        this.g.strokeStyle = r ? this.o.fgColor : this.fgColor
-
-        this.g.moveTo(toX, toY)
-        this.g.lineTo(toX - headLen * Math.cos(headAngle - Math.PI / 4), toY - headLen * Math.sin(headAngle - Math.PI / 4))
-
-        // Path from the side point of the arrow, to the other side point
-        this.g.lineTo(toX - headLen * Math.cos(headAngle + Math.PI / 4), toY - headLen * Math.sin(headAngle + Math.PI / 4))
-
-        // Path from the side point back to the tip of the arrow, and then again to the opposite side point
-        this.g.lineTo(toX, toY)
-        this.g.lineTo(toX - headLen * Math.cos(headAngle - Math.PI / 4), toY - headLen * Math.sin(headAngle - Math.PI / 4))
-        this.g.stroke()
-        this.g.fill()
-
-        return false
-      }
-    })
-  })
 })()
 
 function initScenariosLayout (scenariosData) {
@@ -398,7 +332,7 @@ function generateDeviceControl (container, data) {
               '<li class="mode-menu__button">Рассвет</li>' +
             '</ul>' +
           '</div>' : '' }
-      ${data.control === 'slider-light' ?
+      ${data.control === 'slider-temperature' ?
           '<div class="device-controller__menu">' +
             '<ul class="mode-menu">' +
               '<li class="mode-menu__button mode-menu__button_highlighted">Вручную</li>' +
@@ -429,7 +363,105 @@ function generateDeviceControl (container, data) {
   var newHtmlElement = document.createElement('div')
   newHtmlElement.innerHTML = template
   container.insertBefore(newHtmlElement, container.firstChild)
+  if (data.control === 'knob') {
+    initializeKnob()
+  }
 }
+
+function initializeKnob() {
+  $('.controls__knob').knob({
+    min: 10,
+    max: 30,
+    thickness: 0.01,
+    angleArc: 290,
+    angleOffset: -145,
+    cursor: true,
+    fgColor: '#333333',
+    width: 221,
+    height: 221,
+
+    // Add plus or minus sign to the value of circular regulator
+    format: function(v) {
+      if (v > 0) {
+        return '+' + v
+      } else if (v === 0) {
+        return v
+      } else if (v < 0) {
+        return '-' + v
+      }
+    },
+    // Override draw
+    draw: function () {
+      var a = this.arc(this.cv)  // Arc
+      var r = 1
+
+      // Outer radial dashes
+      this.g.beginPath()
+      this.g.strokeStyle = this.o.fgColor
+
+      this.g.lineWidth = 1 * this.scale
+      this.g.strokeStyle = '#F5A623'
+      var numberOfDashes = 138 // Approximately
+      var step = this.PI2 / numberOfDashes
+      var proportion = 0.81;  // ratio of inner circle radius to outer circle
+      for (var angle = this.startAngle; angle < this.endAngle; angle += step) {
+        this.g.beginPath();
+        this.g.moveTo(this.xy + this.radius * proportion * Math.cos(angle),
+          this.xy + this.radius * proportion * Math.sin(angle));
+        this.g.lineTo(this.xy + this.radius * Math.cos(angle),
+          this.xy + this.radius * Math.sin(angle))
+
+        if (angle < (a.s + a.e) / 2) {
+          this.g.strokeStyle = '#F5A623'
+        } else {
+          this.g.strokeStyle = '#333333'
+        }
+        this.g.stroke()
+      }
+
+      // Central circle with shadow
+      this.g.strokeStyle = '#FEFEFE'
+      this.g.fillStyle = '#FEFEFE'
+      this.g.shadowColor = 'rgba(134,121,71,0.45)'
+      this.g.shadowBlur = 4 * this.scale
+      this.g.shadowOffsetY = 2 * this.scale
+
+      this.g.beginPath()
+      this.g.arc(this.xy, this.xy, this.radius * proportion + 1, 0, 2 * Math.PI, false)
+      this.g.stroke()
+      this.g.fill()
+
+      // Cursor
+      this.g.fillStyle = '#333333'
+      this.g.strokeStyle = '#333333'
+      this.g.shadowColor = 'transparent'
+      this.g.lineWidth = 2 * this.scale
+
+      var headLen = 6 * this.scale
+      var headAngle = (a.s + a.e) / 2
+      var toX = this.xy + this.radius * proportion * Math.cos(headAngle)
+      var toY = this.xy + this.radius * proportion * Math.sin(headAngle)
+
+      this.g.beginPath()
+      this.g.strokeStyle = r ? this.o.fgColor : this.fgColor
+
+      this.g.moveTo(toX, toY)
+      this.g.lineTo(toX - headLen * Math.cos(headAngle - Math.PI / 4), toY - headLen * Math.sin(headAngle - Math.PI / 4))
+
+      // Path from the side point of the arrow, to the other side point
+      this.g.lineTo(toX - headLen * Math.cos(headAngle + Math.PI / 4), toY - headLen * Math.sin(headAngle + Math.PI / 4))
+
+      // Path from the side point back to the tip of the arrow, and then again to the opposite side point
+      this.g.lineTo(toX, toY)
+      this.g.lineTo(toX - headLen * Math.cos(headAngle - Math.PI / 4), toY - headLen * Math.sin(headAngle - Math.PI / 4))
+      this.g.stroke()
+      this.g.fill()
+
+      return false
+    }
+  })
+}
+
 
 function calculateColumnCount (blockWidth, columnWidth, columnGap) {
   return Math.floor((blockWidth + columnGap) / (columnWidth + columnGap))
@@ -448,6 +480,7 @@ function fillPageWithHouseItems (containerElement, pageNumber,
 
 function closePopupWindow (container) {
   container.remove(container.firstChild);
+
 }
 
 function updateScrollButtonsForFeaturedScenarios (scenariosData, tilesCount) {

@@ -29,11 +29,19 @@ ul {
   flex-direction: column;
   min-height: 100vh;
   min-width: 375px;
+  transition: all ease-in-out 0.5s;
 }
-
 
 .blur {
   filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.transparent {
+  opacity: 0;
 }
