@@ -99,14 +99,14 @@ input[type=range]:focus {
 }
 
 .controls__slider_type_light::before {
-  content: url("../assets/icon_sun_min.svg");
+  content: url("/assets/icon_sun_min.svg");
   position: absolute;
   left: 15px;
   top: 12px;
 }
 
 .controls__slider_type_light::after {
-  content: url("../assets/icon_sun_max.svg");
+  content: url("/assets/icon_sun_max.svg");
   position: absolute;
   right: 15px;
   top: 12px;

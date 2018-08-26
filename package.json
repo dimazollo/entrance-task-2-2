@@ -4,14 +4,17 @@
   "description": "В этом репозитории находится решение тестового задания по вёрстке для [14-й Школы разработки интерфейсов](https://academy.yandex.ru/events/frontend/shri_msk-2018-2) (осень 2018, Москва, Санкт-Петербург, Симферополь).",
   "main": "src/js/app.js",
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack --watch"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open",
+    "build": "webpack"
   },
   "author": "Dmitry Volovod",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^9.1.1",
     "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^1.0.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.1",
@@ -22,5 +25,9 @@
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5",
     "webpack-md5-hash": "0.0.6"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "jquery-knob": "^1.2.11"
   }
 }
