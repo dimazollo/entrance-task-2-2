@@ -1,4 +1,3 @@
-// Webpack v4
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackMd5Hash = require('webpack-md5-hash')
@@ -14,7 +13,6 @@ module.exports = {
   },
   mode: 'development',
   devServer: {
-    // contentBase: './dist',
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000,
