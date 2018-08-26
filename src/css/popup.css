@@ -147,7 +147,7 @@
   }
 
   .mode-menu {
-    overflow: scroll;
+    overflow: auto;
     padding-left: 20px;
   }
 

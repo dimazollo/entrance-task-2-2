@@ -169,7 +169,7 @@
     })
   })
 
-  // hide dropdown menu from hamburger on resize to prevent bugs
+  // Hide dropdown menu from hamburger on resize to prevent bugs
   $(window).resize(function () {
     var element = $('.header__header-menu')
     if (element.attr('style')) {
@@ -178,7 +178,7 @@
     }
   })
 
-  // render custom scroll buttons on overflow
+  // Render custom scroll buttons on overflow
   // Featured Devices
   updateScrollButtonsForFeaturedDevices()
   $(window).resize(function () {
@@ -188,7 +188,6 @@
   // Featured Scenarios
   initScenariosLayout(scenarios)
 
-  // Circular regulator
 })()
 
 function initScenariosLayout (scenariosData) {
@@ -367,6 +366,17 @@ function generateDeviceControl (container, data) {
   if (data.control === 'knob') {
     initializeKnob()
   }
+
+  // Block scroll of underlying content on slider moving
+  if (data.control === 'slider-light' || data.control === 'slider-temperature') {
+    document
+      .querySelector('.controls__slider')
+      .addEventListener('touchmove', function (e) {
+        e.stopPropagation();
+        return false;
+      })
+  }
+
 }
 
 function initializeKnob() {
