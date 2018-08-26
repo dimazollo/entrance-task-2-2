@@ -1,14 +1,18 @@
 .house-item {
   width: 200px;
   padding: 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
   border-radius: 20px;
   background-color: #F7F7F7;
   height: 100px;
   cursor: pointer;
+}
+
+.house-item__main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .house-item:hover {
@@ -49,4 +53,21 @@
   color: #858585;
   letter-spacing: 0;
   text-align: left;
+}
+
+.house-item__arrows-container {
+  display: none;
+  background-color: #F7F7F7;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.arrows-container__double-arrow_direction_up {
+  transform: rotate(0);
+}
+
+.arrows-container__double-arrow_direction_down {
+  transform: rotate(180deg);
 }

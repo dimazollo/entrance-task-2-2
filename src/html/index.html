@@ -12,125 +12,136 @@
   <!--<script src="../js/libs/cta.js"></script>-->
 </head>
 <body>
-<div class="wrapper">
-  <header class="header">
-    <img class="header__logo"
-         srcset="../assets/Яндекс_Дом@1x.png 1x,
-                 ../assets/Яндекс_Дом@2x.png 2x"
-         src="../assets/Яндекс_Дом@1x.png"
-         alt="Яндекс Дом">
-    <ul class="header__header-menu">
-      <li class="header-menu__menu-item header-menu__menu-item_active_true">Сводка</li>
-      <li class="header-menu__menu-item header-menu__menu-item_active_false">Устройства</li>
-      <li class="header-menu__menu-item header-menu__menu-item_active_false">Сценарии</li>
-    </ul>
-  </header>
+<div>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__logo">
+        <img srcset="../assets/Яндекс_Дом@1x.png 1x,
+                     ../assets/Яндекс_Дом@2x.png 2x"
+             src="../assets/Яндекс_Дом@1x.png"
+             alt="Яндекс Дом">
+      </div>
+      <div class="header__menu-toggle">
+        <img srcset="../assets/icon_list_m@1x.png 1x,
+                     ../assets/icon_list_m@2x.png 2x"
+             src="../assets/icon_list_m@1x.png"
+             alt="Menu">
+      </div>
+      <nav>
+        <ul class="header__header-menu">
+          <li class="header-menu__menu-item header-menu__menu-item_active_true">Сводка</li>
+          <li class="header-menu__menu-item header-menu__menu-item_active_false">Устройства</li>
+          <li class="header-menu__menu-item header-menu__menu-item_active_false">Сценарии</li>
+        </ul>
+      </nav>
+    </header>
 
-  <main class="main-content">
+    <main class="main-content">
 
-    <div class="main-content__first-line">
+      <div class="main-content__first-line">
 
-      <section id="main" class="main-section">
-        <div class="main-section__header">
-          <div class="section-header__name">Главное</div>
-        </div>
-        <div class="main-widget">
-          <div class="info-pane">
-            <div class="info-pane__greetings">Привет, Геннадий!</div>
-            <div class="info-pane__status">Двери и окна закрыты, сигнализация включена.</div>
+        <section id="main" class="main-section">
+          <div class="main-section__header">
+            <div class="section-header__name">Главное</div>
+          </div>
+          <div class="main-widget">
+            <div class="info-pane">
+              <div class="info-pane__greetings">Привет, Геннадий!</div>
+              <div class="info-pane__status">Двери и окна закрыты, сигнализация включена.</div>
 
-            <div class="whether-widget">
-              <div class="whether-widget__whether-item">
-                <div class="whether-widget__place-name">Дома</div>
-                <div class="whether-widget__temperature">+23</div>
-              </div>
-              <div class="whether-widget__whether-item">
-                <div class="whether-widget__place-name">За окном</div>
-                <div class="whether-widget__temperature">+19</div>
-                <img class="whether-widget__icon"
-                     srcset="../assets/cloud-drizzle@1x.png 1x,
-                             ../assets/cloud-drizzle@2x.png 2x"
-                     src="../assets/cloud-drizzle@1x.png"
-                     alt="cloudy and drizzle">
+              <div class="whether-widget">
+                <div class="whether-widget__whether-item">
+                  <div class="whether-widget__place-name">Дома</div>
+                  <div class="whether-widget__temperature">+23</div>
+                </div>
+                <div class="whether-widget__whether-item">
+                  <div class="whether-widget__place-name">За окном</div>
+                  <div class="whether-widget__temperature">+19</div>
+                  <img class="whether-widget__icon"
+                       srcset="../assets/cloud-drizzle@1x.png 1x,
+                               ../assets/cloud-drizzle@2x.png 2x"
+                       src="../assets/cloud-drizzle@1x.png"
+                       alt="cloudy and drizzle">
+                </div>
               </div>
             </div>
+            <div class="schedule-pane">
+              <!-- generated content will be here -->
+            </div>
           </div>
-          <div class="schedule-pane">
+        </section>
 
+        <section id="featured-scenarios" class="main-section">
+          <div class="main-section__header scenarios-header">
+            <div class="section-header__name">Избранные сценарии</div>
+            <div class="pagination">
+              <img class="pagination__arrow arrow_direction_left"
+                   srcset="../assets/Icons_/Arrow_Right_/arrow@1x.png 1x,
+                           ../assets/Icons_/Arrow_Right_/arrow@2x.png 2x"
+                   src="../assets/Icons_/Arrow_Right_/arrow@1x.png"
+                   alt="<">
+              <img class="pagination__arrow arrow_direction_right"
+                   srcset="../assets/Icons_/Arrow_Right_/arrow@1x.png 1x,
+                           ../assets/Icons_/Arrow_Right_/arrow@2x.png 2x"
+                   src="../assets/Icons_/Arrow_Right_/arrow@1x.png"
+                   alt=">">
+            </div>
           </div>
+          <div class="scenarios-pane">
+            <!-- generated content will be here -->
+          </div>
+        </section>
+
+      </div>
+
+      <section id="featured-devices" class="main-section">
+        <div class="main-section__header main-section__header_margin_right">
+          <div class="flex__justify_space-between">
+            <div class="flex__justify_flex-start">
+              <div class="section-header__name section-header__name_margin_right">Избранные устройства</div>
+              <ul class="filter-menu-buttons">
+                <li class="filter-menu-buttons__item filter-menu-buttons__item_active">Все</li>
+                <li class="filter-menu-buttons__item filter-menu-buttons__item_active_false">Кухня</li>
+                <li class="filter-menu-buttons__item filter-menu-buttons__item_active_false">Зал</li>
+                <li class="filter-menu-buttons__item filter-menu-buttons__item_active_false">Лампочки</li>
+                <li class="filter-menu-buttons__item filter-menu-buttons__item_active_false">Камеры</li>
+              </ul>
+            </div>
+            <div class="filter-menu-dropdown">
+              <div class="filter-menu-dropdown__button dropdown-button">
+                <span class="dropdown-button__name">Все</span>
+                <img class="dropdown-button__arrow"
+                     srcset="../assets/Icons_/Arrow_Down_/arrow@1x.png 1x,
+                           ../assets/Icons_/Arrow_Down_/arrow@2x.png 2x"
+                     src="../assets/Icons_/Arrow_Down_/arrow@1x.png" alt="&darr;"></div>
+              <ul class="filter-menu-dropdown__content">
+                <li class="filter-menu-dropdown__item">Все</li>
+                <li class="filter-menu-dropdown__item">Кухня</li>
+                <li class="filter-menu-dropdown__item">Зал</li>
+                <li class="filter-menu-dropdown__item">Лампочки</li>
+                <li class="filter-menu-dropdown__item">Камеры</li>
+              </ul>
+            </div>
+            <div class="pagination">
+              <img class="pagination__arrow arrow_direction_left"
+                   srcset="../assets/Icons_/Arrow_Right_/arrow@1x.png 1x,
+                           ../assets/Icons_/Arrow_Right_/arrow@2x.png 2x"
+                   src="../assets/Icons_/Arrow_Right_/arrow@1x.png"
+                   alt="<">
+              <img class="pagination__arrow arrow_direction_right"
+                   srcset="../assets/Icons_/Arrow_Right_/arrow@1x.png 1x,
+                           ../assets/Icons_/Arrow_Right_/arrow@2x.png 2x"
+                   src="../assets/Icons_/Arrow_Right_/arrow@1x.png"
+                   alt=">">
+            </div>
+          </div>
+        </div>
+        <div id="devices-pane" class="devices-pane">
         </div>
       </section>
+    </main>
 
-      <section id="featured-scenarios" class="main-section">
-        <div class="main-section__header scenarios-header">
-          <div class="section-header__name">Избранные сценарии</div>
-          <div class="pagination">
-            <img class="pagination__arrow arrow_direction_left"
-                 srcset="../assets/Icons_/Arrow_Right_/arrow@1x.png 1x,
-                         ../assets/Icons_/Arrow_Right_/arrow@2x.png 2x"
-                 src="../assets/Icons_/Arrow_Right_/arrow@1x.png"
-                 alt="<">
-            <img class="pagination__arrow arrow_direction_right"
-                 srcset="../assets/Icons_/Arrow_Right_/arrow@1x.png 1x,
-                         ../assets/Icons_/Arrow_Right_/arrow@2x.png 2x"
-                 src="../assets/Icons_/Arrow_Right_/arrow@1x.png"
-                 alt=">">
-          </div>
-        </div>
-        <div class="scenarios-pane">
-        </div>
-      </section>
-
-    </div>
-
-    <section id="featured-devices" class="main-section">
-      <div class="main-section__header main-section__header_margin_right">
-        <div class="flex__justify_space-between">
-          <div class="flex__justify_flex-start">
-            <div class="section-header__name section-header__name_margin_right">Избранные устройства</div>
-            <ul class="filter-menu-buttons">
-              <li class="filter-menu-buttons__item filter-menu-buttons__item_active_true">Все</li>
-              <li class="filter-menu-buttons__item filter-menu-buttons__item_active_false">Кухня</li>
-              <li class="filter-menu-buttons__item filter-menu-buttons__item_active_false">Зал</li>
-              <li class="filter-menu-buttons__item filter-menu-buttons__item_active_false">Лампочки</li>
-              <li class="filter-menu-buttons__item filter-menu-buttons__item_active_false">Камеры</li>
-            </ul>
-          </div>
-          <div class="filter-menu-dropdown">
-            <div class="filter-menu-dropdown__button dropdown-button">
-              <span class="dropdown-button__name">Все</span>
-              <img class="dropdown-button__arrow"
-                   srcset="../assets/Icons_/Arrow_Down_/arrow@1x.png 1x,
-                         ../assets/Icons_/Arrow_Down_/arrow@2x.png 2x"
-                   src="../assets/Icons_/Arrow_Down_/arrow@1x.png" alt="&darr;"></div>
-            <ul class="filter-menu-dropdown__content">
-              <li class="filter-menu-dropdown__item">Все</li>
-              <li class="filter-menu-dropdown__item">Кухня</li>
-              <li class="filter-menu-dropdown__item">Зал</li>
-              <li class="filter-menu-dropdown__item">Лампочки</li>
-              <li class="filter-menu-dropdown__item">Камеры</li>
-            </ul>
-          </div>
-          <div class="pagination">
-            <img class="pagination__arrow arrow_direction_left"
-                 srcset="../assets/Icons_/Arrow_Right_/arrow@1x.png 1x,
-                         ../assets/Icons_/Arrow_Right_/arrow@2x.png 2x"
-                 src="../assets/Icons_/Arrow_Right_/arrow@1x.png"
-                 alt="<">
-            <img class="pagination__arrow arrow_direction_right"
-                 srcset="../assets/Icons_/Arrow_Right_/arrow@1x.png 1x,
-                         ../assets/Icons_/Arrow_Right_/arrow@2x.png 2x"
-                 src="../assets/Icons_/Arrow_Right_/arrow@1x.png"
-                 alt=">">
-          </div>
-        </div>
-      </div>
-      <div id="devices-pane" class="devices-pane">
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
+    <footer class="footer">
     <ul class="footer__footer-menu">
       <li><a class="footer-menu__menu-item" href="#">Помощь</a></li>
       <li><a class="footer-menu__menu-item" href="#">Обратная связь</a></li>
@@ -139,6 +150,18 @@
     </ul>
     <span class="footer__copyright">&copy;&thinsp;2001-2017 ООО &laquo;Яндекс&raquo;</span>
   </footer>
+  </div>
+
+  <div class="popup-container-wrapper hidden">
+    <div class="popup-container transparent">
+      <!-- generated content will be here -->
+      <div class="popup-dialog">
+        <button class="popup-dialog__button popup-dialog__button_highlighted">Применить</button>
+        <button class="popup-dialog__button">Закрыть</button>
+      </div>
+    </div>
+  </div>
+
 </div>
 <!--<script src="../js/app.js"></script>-->
 <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>

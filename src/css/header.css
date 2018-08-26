@@ -8,10 +8,11 @@
   align-items: center;
   border-bottom: 1px solid #F0F0F0;
   background-color: #FFFFFF;
+  padding: 0 40px
 }
 
 .header__logo {
-  margin: 0 40px;
+  margin-right: 54px;
 }
 
 .header__header-menu {
@@ -23,9 +24,14 @@
   color: #333333;
 }
 
+.header__menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
 .header-menu__menu-item {
   list-style-type: none;
-  margin: 0 14px;
+  margin-right: 28px;
   cursor: pointer;
   transition: color .15s ease-out;
 }
@@ -42,4 +48,45 @@
 
 .header-menu__menu-item_active_false {
   opacity: 0.6;
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    height: 64px;
+    border-bottom: none;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .header__logo {
+    margin-right: 54px;
+    flex: 1 0 auto;
+  }
+
+  .header__header-menu {
+    padding: 0;
+    margin: 0;
+    display: none;
+    position: absolute;
+    background-color: #FFFFFF;
+    z-index: 100;
+    left: 0;
+    top: 64px;
+    width: 100%;
+  }
+
+  .header__header-menu:first-child {
+    border-top: 1px solid #F0F0F0;
+  }
+
+  .header-menu__menu-item {
+    padding: 15px 20px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #F0F0F0;
+  }
+
+  .header__menu-toggle {
+    display: inline-block;
+  }
 }

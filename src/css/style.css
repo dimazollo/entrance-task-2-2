@@ -1,11 +1,17 @@
 @import "/src/css/header.css";
 @import "/src/css/main.css";
 @import "/src/css/footer.css";
+@import "/src/css/popup.css";
 
 * {
   padding: 0;
   margin: 0;
   border: 0;
+}
+
+ul {
+  -webkit-padding-start: 0;
+  -moz-padding-start: 0;
 }
 
 * {
@@ -22,12 +28,20 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
-  /* TODO: Уточнить! */
-  /*min-width: 1151px;*/
-  /*max-width: 1366px;*/
+  min-width: 375px;
+  transition: all ease-in-out 0.5s;
 }
 
-@media screen and (max-width: 576px) {
+.blur {
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+}
 
+.hidden {
+  visibility: hidden;
+}
+
+.transparent {
+  opacity: 0;
 }
