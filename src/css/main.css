@@ -181,7 +181,7 @@
   }
 }
 
-/* TODO - перепроверить всё, кроме фоновой картинки */
+
 @media screen and (max-width: 710px) {
   #main {
     display: flex;
@@ -197,7 +197,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-    height: 331px; /* FIXME */
+    height: 331px;
     width: auto;
     max-width: 630px;
     min-width: 335px;
